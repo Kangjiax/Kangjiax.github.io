@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+    }
+    .box {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        /* border: 5px solid rgba(red, g, 255, alpha); */
+        background-color: black;
+        color: white;
+        font-size: 30px;
+        line-height: 40px;
+        text-align: center;
+    }
+
+    @keyframes mybgc {
+        0% {
+            background-color: red;
+            background-image: linear-gradient(to right, red, rgba(200, 255, 0, 0.705), green);
+        }
+
+        50% {
+            background-color: pink;
+            background-image: linear-gradient(to right, orange, blue, skyblue);
+        }
+
+        100% {
+            background-color: green;
+            background-image: linear-gradient(to right, pink, rgb(179, 17, 79), rgb(14, 146, 124));
+        }
+    }
+
+    .bigbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 160px;
+        border-radius: 50%;
+        width: 160px;
+        animation-name: mybgc;
+        animation-duration: 7s;
+        animation-direction: alternate-reverse;
+        animation-iteration-count: infinite;
+    }
+</style>
+
+<body>
+
+    <div class="bigbox">
+        <div class="box">
+            <p>loading</p>
+            <p class="num"></p>
+        </div>
+    </div>
+</body>
+<script>
+    var numEl = document.querySelector(".num");
+    var num = 0
+    numEl.innerText = num + "%";
+    function load() {
+        var id = setInterval(function () {
+            num++;
+            numEl.innerText = num + "%";
+            if (num >= 100) {
+                clearInterval(id)
+                numEl.innerText = num + "%";
+                setTimeout(function () {
+                    num = 1
+                    numEl.innerText = num + "%";
+
+                }, 1000)
+                setTimeout(load, 3000)
+            }
+            numEl.innerText = num + "%";
+        }
+            , 50)
+    }
+    setTimeout(load, 2000)
+</script>
+
+</html>
