@@ -1,0 +1,464 @@
+.nav {
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  color: white;
+}
+.nav .row {
+  display: flex;
+  align-items: center;
+}
+.nav .row .nav-item {
+  display: flex;
+  justify-content: center;
+}
+.nav .row .nav-item a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+}
+.nav .row .nav-item a:nth-child(1) {
+  border-bottom: 1px solid orangered;
+}
+.nav .row .nav-item a:hover {
+  border-bottom: 1px solid orangered;
+}
+.nav .row .input-group input {
+  border-radius: 32px 0 0 32px;
+  border: 1px solid white;
+  background-color: transparent;
+}
+.nav .row .input-group .input-group-btn {
+  font-size: 20px;
+}
+.nav .row .input-group .input-group-btn .btn:nth-child(1) {
+  color: white;
+  border-radius: 0 32px 32px 0;
+  background-color: orangered;
+}
+.nav .row .input-group .input-group-btn .btn:nth-child(2) {
+  color: white;
+  background-color: transparent;
+  border: 0;
+}
+.bg {
+  height: 800px;
+  color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url('../整容/img/b1.jpg');
+  position: relative;
+}
+.bg .mark {
+  transition: all 0.3s;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(41, 34, 34, 0.452);
+}
+.bg .next {
+  position: absolute;
+  right: 0;
+  top: 47%;
+  font-size: 50px;
+}
+.bg .before {
+  position: absolute;
+  font-size: 50px;
+  left: 0;
+  top: 47%;
+}
+.bg h1 {
+  text-transform: uppercase;
+}
+.bg .bg-item {
+  position: absolute;
+  top: 200px;
+}
+.bg .bg-item div,
+.bg .bg-item h1,
+.bg .bg-item button {
+  font-weight: bolder;
+}
+.bg .bg-item div {
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: gray;
+  border-radius: 32px;
+}
+.bg .bg-item button {
+  width: 200px;
+  height: 50px;
+  background-color: orangered;
+  border-radius: 32px;
+  border: 0;
+}
+.bg .bg-item button a {
+  color: white;
+  text-decoration: none;
+}
+.bg .bg-item button:hover {
+  background-color: orange;
+}
+.item {
+  margin: 50px 0;
+}
+.item .row {
+  text-align: center;
+}
+.item .row button {
+  width: 200px;
+  height: 40px;
+  background-color: orangered;
+  border-radius: 25px;
+  border: 0;
+}
+.item .row button:hover {
+  background-color: orange;
+}
+.item .item-img {
+  margin: 50px 0;
+  position: relative;
+}
+.item .item-img img {
+  width: 100%;
+  border-radius: 12px;
+}
+.item .item-img .item-name {
+  height: 100%;
+  border-radius: 12px;
+  background-color: rgba(255, 68, 0, 0.664);
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 20px;
+  transform: scale(0);
+  transition: all 0.3s;
+}
+.item .item-img .item-foot {
+  background-color: orangered;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 0 0 0 12px;
+}
+.item .item-img:hover .item-foot {
+  opacity: 0;
+}
+.item .item-img:hover .item-name {
+  transform: scale(1);
+}
+.name .row {
+  margin: 30px;
+}
+.name .row h1 {
+  text-align: center;
+}
+.name .row .card-name {
+  margin: 20px 0;
+  box-shadow: 0 0 5px 0 gray;
+  padding: 20px;
+  position: relative;
+}
+.name .row .card-name i,
+.name .row .card-name span {
+  font-size: 3em;
+}
+.name .row .card-name i {
+  color: red;
+}
+.name .row .card-name span {
+  color: rgba(128, 128, 128, 0.253);
+  position: absolute;
+  font-weight: bolder;
+  right: 30px;
+}
+.name .row .card-name:hover span {
+  color: gray;
+}
+.name .row .card-name h3:hover {
+  color: red;
+}
+.name .row .card-name h4 {
+  display: inline-block;
+  border-bottom: 1px solid orangered;
+}
+.card {
+  margin: 50px 0;
+  padding: 50px;
+}
+.card .s-name {
+  padding: 20px;
+  margin: 20px 0;
+}
+.card .s-name button {
+  width: 200px;
+  height: 50px;
+  background-color: orangered;
+  border: 0;
+  border-radius: 32px;
+}
+.card .s-name button a {
+  color: white;
+  text-decoration: none;
+}
+.card .s-name button:hover {
+  background-color: orange;
+}
+.card .img {
+  margin: 20px 0;
+  position: relative;
+}
+@keyframes move {
+  0% {
+    border: 2px solid rgba(255, 255, 255, 0.61);
+  }
+  50% {
+    border: 5px solid rgba(255, 255, 255, 0.432);
+  }
+  100% {
+    border: 10px solid transparent;
+  }
+}
+.card .img .forword {
+  animation: move 3s linear infinite reverse;
+  position: absolute;
+  top: 150px;
+  left: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+.card .img .forword .back {
+  animation: move 5s linear infinite reverse;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .img .forword .btn {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  color: red;
+  line-height: 35px;
+}
+.card .img .forword .btn:hover {
+  transform: scale(1.1);
+}
+.card .img .border {
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  border: 5px solid rgba(128, 128, 128, 0.479);
+  top: -20px;
+  left: 65px;
+  z-index: -1;
+  border-radius: 12px;
+}
+.card .img img {
+  width: 98%;
+  border-radius: 12px;
+}
+.bg2 {
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../整容/img/bg1.jpg');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bg2 .right {
+  text-align: right;
+}
+.bg2 button {
+  margin-top: 50px;
+  width: 200px;
+  height: 50px;
+  background-color: orangered;
+  border: 0;
+  border-radius: 32px;
+}
+.bg2 button a {
+  text-decoration: none;
+  color: white;
+}
+.bg2 button:hover {
+  background-color: orange;
+}
+.main .row .col-lg-6 {
+  padding: 0;
+}
+.main .row img {
+  width: 100%;
+  height: 434px;
+}
+.main .row .i-item {
+  height: 434px;
+  padding: 50px;
+  box-sizing: border-box;
+}
+.main .row .i-item button {
+  width: 200px;
+  height: 50px;
+  border-radius: 32px;
+  border: 0;
+  background-color: orangered;
+}
+.main .row .i-item button a {
+  color: white;
+  text-decoration: none;
+}
+.main .row .i-item button:hover {
+  background-color: orange;
+}
+.main .row .item-box {
+  height: 434px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.main .row .item-box i {
+  font-size: 32px;
+  color: red;
+}
+.goodList {
+  margin: 50px 0;
+}
+.goodList .row h1 {
+  text-align: center;
+  margin: 30px 0;
+}
+.goodList .row .m {
+  box-shadow: 0 0 5px 0 #f3e6e6;
+  border-radius: 12px 12px 0 0;
+  width: 100%;
+  margin: 10px 0;
+}
+.goodList .row .m .imgs {
+  position: relative;
+  width: 100%;
+}
+.goodList .row .m .imgs img {
+  border-radius: 12px 12px 0 0;
+  width: 100%;
+}
+.goodList .row .m .imgs .mark {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  border-radius: 12px 12px 0 0;
+  background-color: rgba(255, 0, 0, 0.541);
+  transition: all 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.goodList .row .m .imgs .mark i {
+  font-size: 2em;
+  color: white;
+}
+.goodList .row .m:hover .mark {
+  transform: scale(1);
+}
+.goodList .row .m .m-name {
+  padding: 20px;
+}
+.goodList .row .m .m-name h2:hover {
+  color: red;
+}
+.goodList .row .m .m-name div {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.goodList .row .m .m-name div i {
+  margin: 5px;
+  color: red;
+}
+.goodList .row .m .m-name div b {
+  border-bottom: 1px solid red;
+}
+.bg3 {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url('../整容/img/footer.jpg');
+  position: relative;
+  color: rgba(255, 255, 255, 0.856);
+}
+.bg3 .col-lg-4 {
+  margin: 40px 0 20px 0;
+}
+.bg3 h2 {
+  margin: 10px 0;
+}
+.bg3 h5 i {
+  margin: 5px;
+}
+.bg3 .mark {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.651);
+}
+.bg3 .item-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bg3 .foot {
+  color: white;
+  padding: 50px;
+  text-align: center;
+  position: relative;
+  z-index: 999;
+}
+.bg3 .border {
+  border-bottom: 1px solid white;
+}
+.top {
+  position: fixed;
+  text-decoration: none;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  font-size: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: 0;
+  background-color: red;
+}
+.top i {
+  color: white;
+  text-decoration: none;
+}
+.act {
+  background: #000;
+  color: white;
+}
+/*# sourceMappingURL=./1.css.map */

@@ -1,0 +1,598 @@
+.nav {
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    color: white;
+
+    .row {
+        // margin: 0 auto;
+        display: flex;
+        align-items: center;
+
+        .nav-item {
+            display: flex;
+            justify-content: center;
+
+            a {
+                text-transform: uppercase;
+                text-decoration: none;
+                color: white;
+                margin: 0 10px;
+
+                &:nth-child(1) {
+                    border-bottom: 1px solid orangered;
+                }
+
+                &:hover {
+                    border-bottom: 1px solid orangered;
+                }
+            }
+
+        }
+
+        .input-group {
+
+            input {
+                border-radius: 32px 0 0 32px;
+                border: 1px solid white;
+                background-color: transparent;
+
+            }
+
+            .input-group-btn {
+                font-size: 20px;
+
+                .btn:nth-child(1) {
+                    color: white;
+                    border-radius: 0 32px 32px 0;
+                    background-color: orangered;
+                }
+
+                .btn:nth-child(2) {
+                    color: white;
+                    background-color: transparent;
+                    border: 0;
+                }
+            }
+        }
+    }
+
+
+}
+
+.bg {
+    height: 800px;
+    color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('../整容/img/b1.jpg');
+    position: relative;
+
+    .mark {
+        transition: all 0.3s;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(41, 34, 34, 0.452);
+
+    }
+
+
+
+    .next {
+        position: absolute;
+        right: 0;
+        top: 47%;
+        font-size: 50px;
+    }
+
+    .before {
+        position: absolute;
+        font-size: 50px;
+        left: 0;
+        top: 47%;
+    }
+
+    h1 {
+        text-transform: uppercase
+    }
+
+    .bg-item {
+        position: absolute;
+        top: 200px;
+
+        div,
+        h1,
+        button {
+            font-weight: bolder;
+        }
+
+        div {
+            width: 150px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: gray;
+            border-radius: 32px;
+        }
+
+        button {
+            width: 200px;
+            height: 50px;
+            background-color: orangered;
+            border-radius: 32px;
+            border: 0;
+
+            a {
+                color: white;
+                text-decoration: none;
+            }
+
+            &:hover {
+                background-color: orange;
+
+            }
+        }
+    }
+}
+
+// body{
+//     background-color: black;
+//     color: white;
+// }
+.item {
+    margin: 50px 0;
+    // color: white;
+
+    .row {
+        text-align: center;
+
+        h1 {
+            // color: black;
+        }
+
+        button {
+            width: 200px;
+            height: 40px;
+            background-color: orangered;
+            border-radius: 25px;
+            border: 0;
+
+            &:hover {
+                background-color: orange;
+
+            }
+        }
+    }
+
+    .item-img {
+        margin: 50px 0;
+        position: relative;
+
+        img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .item-name {
+            height: 100%;
+            border-radius: 12px;
+            background-color: rgba(255, 68, 0, 0.664);
+            position: absolute;
+            top: 0;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            padding: 20px;
+            transform: scale(0);
+            transition: all .3s;
+        }
+
+        .item-foot {
+            background-color: orangered;
+            font-size: 20px;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 0 0 0 12px;
+        }
+
+        &:hover {
+            .item-foot {
+                opacity: 0;
+            }
+
+            .item-name {
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+.name {
+    .row {
+        margin: 30px;
+
+        h1 {
+            text-align: center;
+        }
+
+        .card-name {
+            margin: 20px 0;
+            box-shadow: 0 0 5px 0 gray;
+            padding: 20px;
+            position: relative;
+
+            i,
+            span {
+                font-size: 3em;
+            }
+
+            i {
+                color: red;
+            }
+
+            span {
+                color: rgba(128, 128, 128, 0.253);
+                position: absolute;
+                font-weight: bolder;
+                right: 30px;
+
+            }
+
+            &:hover {
+                span {
+                    color: gray;
+                }
+            }
+
+            h3:hover {
+                color: red;
+            }
+
+            h4 {
+                display: inline-block;
+                border-bottom: 1px solid orangered;
+            }
+        }
+    }
+
+}
+
+.card {
+    margin: 50px 0;
+    padding: 50px;
+
+    .s-name {
+        padding: 20px;
+        margin: 20px 0;
+
+        button {
+            width: 200px;
+            height: 50px;
+            background-color: orangered;
+            border: 0;
+            border-radius: 32px;
+
+            a {
+                color: white;
+                text-decoration: none;
+            }
+
+            &:hover {
+                background-color: orange;
+            }
+        }
+
+    }
+
+    .img {
+        margin: 20px 0;
+
+        @keyframes move {
+            0% {
+                // transform: scale(1);
+                border: 2px solid rgba(255, 255, 255, 0.61);
+            }
+
+            50% {
+                border: 5px solid rgba(255, 255, 255, 0.432);
+            }
+
+            100% {
+                border: 10px solid transparent;
+                // transform: scale(1.1);
+
+            }
+
+        }
+
+        position: relative;
+
+        .forword {
+            animation: move 3s linear infinite reverse;
+            position: absolute;
+            top: 150px;
+            left: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+
+            .back {
+                animation: move 5s linear infinite reverse;
+                border-radius: 50%;
+                width: 70px;
+                height: 70px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .btn {
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                background-color: white;
+                color: red;
+                line-height: 35px;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+
+        }
+
+        .border {
+            position: absolute;
+            width: 90%;
+            height: 100%;
+            border: 5px solid rgba(128, 128, 128, 0.479);
+            top: -20px;
+            left: 65px;
+            z-index: -1;
+            border-radius: 12px;
+        }
+
+        img {
+            width: 98%;
+            border-radius: 12px;
+        }
+    }
+}
+
+.bg2 {
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../整容/img/bg1.jpg');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .right {
+        text-align: right;
+    }
+
+    button {
+        margin-top: 50px;
+        width: 200px;
+        height: 50px;
+        background-color: orangered;
+        border: 0;
+        border-radius: 32px;
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        &:hover {
+            background-color: orange;
+        }
+    }
+}
+
+.main {
+    .row {
+        .col-lg-6 {
+            padding: 0;
+        }
+
+        img {
+            width: 100%;
+            height: 434px;
+        }
+        .i-item{
+            height: 434px;
+            padding: 50px;
+            box-sizing: border-box;
+            button{
+                width: 200px;
+                height: 50px;
+                border-radius: 32px;
+                border: 0;
+                // margin: 20px 0;
+                a{
+                    color: white;
+                    text-decoration: none;
+                }
+                background-color: orangered;
+                &:hover{
+                background-color: orange;
+                }
+            }
+        }
+        .item-box{
+            height: 434px;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            i{
+                font-size: 32px;
+                color: red;
+            }
+        }
+    }
+}
+
+.goodList {
+    margin: 50px 0;
+
+    .row {
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .m {
+            box-shadow: 0 0 5px 0 rgb(243, 230, 230);
+            border-radius: 12px 12px 0 0;
+            width: 100%;
+            margin: 10px 0;
+
+            .imgs {
+                position: relative;
+                width: 100%;
+
+                img {
+                    border-radius: 12px 12px 0 0;
+                    width: 100%;
+                }
+
+                .mark {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(0);
+                    border-radius: 12px 12px 0 0;
+                    background-color: rgba(255, 0, 0, 0.541);
+                    transition: all 1s;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    i {
+                        font-size: 2em;
+                        color: white;
+                    }
+                }
+            }
+
+            &:hover .mark {
+                transform: scale(1);
+            }
+
+
+            .m-name {
+                padding: 20px;
+
+                h2:hover {
+                    color: red;
+                }
+
+                div {
+                    margin: 10px 0;
+                    display: flex;
+                    justify-content: space-between;
+
+                    i {
+                        margin: 5px;
+                        color: red;
+                    }
+
+                    b {
+                        border-bottom: 1px solid red;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.bg3 {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('../整容/img/footer.jpg');
+    position: relative;
+    color: rgba(255, 255, 255, 0.856);
+
+    .col-lg-4 {
+        margin: 40px 0 20px 0;
+    }
+
+    h2 {
+        margin: 10px 0;
+    }
+
+    h5 {
+        i {
+            margin: 5px;
+        }
+    }
+
+    .mark {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.651);
+    }
+
+    .item-name {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .foot {
+        color: white;
+        padding: 50px;
+        text-align: center;
+        position: relative;
+        z-index: 999;
+    }
+
+    .border {
+        border-bottom: 1px solid white;
+    }
+}
+
+.top {
+    position: fixed;
+    text-decoration: none;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 0;
+
+    i {
+        color: white;
+        text-decoration: none;
+    }
+
+    background-color: red;
+}
+
+.act {
+    background: #000;
+    color: white;
+}

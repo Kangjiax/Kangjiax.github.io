@@ -21,6 +21,7 @@
             background: black;
             font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
             font-size: 14px;
+            color: white;
             /* color: rgba(0, 0, 0, 0.418); */
             margin: 0;
             padding: 0;
@@ -73,99 +74,182 @@
             background-position: center;
             background-image: url('./image/01.jpg');
         }
+
         .imgs img {
             width: 20%;
             height: 40%;
             position: absolute;
         }
+
         .item {
             left: 200px;
             color: #fff;
             /* top: 0; */
+            text-align: left;
             position: absolute;
             transition: all 6s;
             opacity: 0;
+            font-size: 40px;
         }
+
         .act {
             opacity: 1;
         }
-        @keyframes move1{
-            from{
-                top:20%;
+
+        @keyframes move1 {
+            from {
+                top: 20%;
             }
-            to{
-                top:19%
-            }
-        }
-        @keyframes move2{
-            from{
-                bottom:5%
-            }
-            to{
-                bottom:6%
+
+            to {
+                top: 19%
             }
         }
-        @keyframes move3{
-            from{
+
+        @keyframes move2 {
+            from {
+                bottom: 5%
+            }
+
+            to {
+                bottom: 6%
+            }
+        }
+
+        @keyframes move3 {
+            from {
                 transform: rotate(0deg);
             }
-            to{
+
+            to {
                 transform: rotate(360deg);
             }
         }
-        .imgs img:nth-of-type(1){
+
+        .imgs img:nth-of-type(1) {
             animation: move1 1s linear infinite alternate-reverse;
-            top:20%;
+            top: 20%;
             left: 20%;
         }
-        .imgs img:nth-of-type(2){
+
+        .imgs img:nth-of-type(2) {
             animation: move2 1s linear infinite alternate-reverse;
             right: 20%;
-            bottom:5%;
+            bottom: 5%;
         }
-        .imgs img:nth-of-type(3){
+
+        .imgs img:nth-of-type(3) {
             animation: move3 100s linear infinite alternate-reverse;
             width: 10%;
             height: 20%;
-            top:30%;
+            top: 30%;
             right: 30%;
         }
-        button{
-            font-size: 20px;
-            width: 200px;
-            height: 50px;
-          
-            background-color: rgba(186, 204, 204, 0.479);
-            border-radius: 32px;
-            border: 0;
-        }
-         button:hover{
-            background-color: orange;
-            z-index: 1;
 
+        button {
+            font-size: 32px;
+            width: 250px;
+            height: 80px;
+            color: white;
+            background-color: black;
+            border-radius: 32px;
+            border: 1px solid white;
         }
-        .item {
-            font-size: 40px;
+
+        button:hover {
+            background-color: gray;
+            z-index: 1;
         }
-        .item div{
+
+        .item div {
             width: 50px;
             height: 5px;
             background-color: gray;
-            margin: 40px 30px;
+            /* margin: 40px 30px; */
         }
-        .imgs button{
-            margin: 250px 50px;
+
+        .imgs .imgs-item {
+            position: relative;
+            z-index: 1;
+            margin-top: 300px;
+            font-size: 1em;
+        }
+
+        .imgs .imgs-item h1 {
+            font-size: 3em;
+        }
+
+        .imgs .imgs-item button {
+            position: relative;
+            margin: 10px;
+        }
+        .imgs .imgs-item button:nth-of-type(2){
+            background-color: #fff;
+            color: black;
+        }
+
+        .imgs .imgs-item button span {
+            position: absolute;
+            font-size: 25px;
+            right: 0;
+            top: -10px;
+            background-color: red;
+            display: block;
+        }
+        .nav{
+            z-index: 2;
+            width: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 50px;
+        }
+        .nav-box{
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-box .logo{
+            width: 200px;
+            height: 35px;
+            background-repeat: no-repeat;
+            background-image: url('./image/极速浏览器.png');
+            background-size: 100%;
+        }
+        .nav-box .nav-item{
+            font-size: 20px;
+        }
+        .nav-item a{
+            text-decoration: none;
+            color: gray;
+            margin: 0 10px;
         }
     </style>
 </head>
 
 <body>
+    <div class="nav">
+        <div class="nav-box">
+            <div class="logo"></div>
+            <div class="nav-item">
+                <a href="">论坛</a>
+                <a href="">拓展</a>
+                <a href="">更新</a>
+            </div>
+        </div>
+    </div>
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="imgs">
-                    <button>64bit</button>
-                    <button>32bit</button>
+                    <div class="imgs-item">
+                        <h1>畅快浏览 极致体验</h1>
+                        <p> 全新Chrome内核浏览器,性能更强,速度更快</p>
+                        <button>32位版本</button>
+                        <button>64位版本<span>New</span></button>
+                    </div>
                     <img src="./image/星球min.png" alt="">
                     <img src="./image/星球1.png" alt="">
                     <img src="./image/宇宙.png" alt="">
@@ -174,37 +258,40 @@
             <div class="swiper-slide">
                 <div class="item">
                     <h1>极速</h1>
-                    <h3>全新内核</h3>
                     <div></div>
-                    <button>OFFSET OUT</button>
+                    <h3>全新Chromium内核</h3>
+                    <p> 性能强劲，快如闪电</p>
+                    <button>全面加速</button>
                 </div>
                 <video autoplay loop src="./vidio/星球.mp4"></video>
             </div>
             <div class="swiper-slide">
                 <div class="item">
                     <h1>极速</h1>
-                    <h3>全新内核</h3>
                     <div></div>
-                    <button>OFFSET OUT</button>
+                    <h3>全新Chromium内核</h3>
+                    <p> 性能强劲，快如闪电</p>
+                    <button>全面加速</button>
                 </div>
                 <video autoplay loop src="./vidio/圣光.mp4"></video>
             </div>
             <div class="swiper-slide">
                 <div class="item">
                     <h1>极速</h1>
-                    <h3>全新内核</h3>
                     <div></div>
-                    <button>OFFSET OUT</button>
+                    <h3>全新Chromium内核</h3>
+                    <p> 性能强劲，快如闪电</p>
+                    <button>全面加速</button>
                 </div>
                 <video autoplay loop src="./vidio/电脑.mp4"></video>
             </div>
             <div class="swiper-slide">
                 <div class="item">
                     <h1>极速</h1>
-                    <h3>全新内核</h3>
                     <div></div>
-
-                    <button>OFFSET OUT</button>
+                    <h3>全新Chromium内核</h3>
+                    <p> 性能强劲，快如闪电</p>
+                    <button>全面加速</button>
                 </div>
                 <video autoplay loop src="./vidio/极光.mp4"></video>
             </div>
@@ -233,7 +320,7 @@
                 $('.item').eq(index).removeClass('act');
             }
             if (swiper.realIndex !== 0) {
-                $('.item').eq(swiper.realIndex-1).addClass('act')
+                $('.item').eq(swiper.realIndex - 1).addClass('act')
             }
         })
         window.onmousewheel = function () {
@@ -241,7 +328,7 @@
                 $('.item').eq(index).removeClass('act');
             }
             if (swiper.realIndex !== 0) {
-                $('.item').eq(swiper.realIndex-1).addClass('act')
+                $('.item').eq(swiper.realIndex - 1).addClass('act')
             }
         }
     </script>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 强制ie浏览器使用 最新edge渲染引擎-->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <!-- 响应式网页必须 -->
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>整容</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.cn/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.cn/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+<style>
+    * {
+        /* margin: 0; */
+        /* padding: 0; */
+    }
+</style>
+
+<body>
+    <header class="header">
+
+        <section class="side active">
+            <div class="bg_side">
+                <h1 class="logo_side">aesthetic</h1>
+                <div class="nav_side">
+                    <ul>
+                        <li class="active"><a href="#">home</a></li>
+                        <li><a href="#">about</a></li>
+                        <li><a href="#">services</a></li>
+                        <li><a href="#">pages </a><span class="">></span>
+                            <ul>
+                                <li><a href="#">pricing</a></li>
+                                <li><a href="#">doctor</a></li>
+                                <li><a href="#">blog details</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">news</a></li>
+                        <li><a href="#">contact</a></li>
+                        <div class="btn"><a href="">appointment</a></div>
+                    </ul>
+                </div>
+                <div class="i_side_top">
+                    <ul>
+                        <li><i class="fa fa-phone"></i>1-677-124-44227</li>
+                        <li><i class="fa fa-map-marker"></i>Los Angeles Gournadi, 1230 Bariasl</li>
+                        <li><i class="fa fa-clock-o"></i>Mon to Sat 9:00am to 18:00pm</li>
+                    </ul>
+                </div>
+                <div class="i_side_bottom">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a> </li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="top">
+            <div class="container">
+                <div class="row">
+                    <div class="wrapper col-xs-12 hidden-xs  hidden-sm  ">
+                        <div class="left">
+                            <ul>
+                                <li><i class="fa fa-phone"></i>1-677-124-44227</li>
+                                <li><i class="fa fa-map-marker"></i> Los Angeles Gournadi, 1230 Bariasl</li>
+                                <li><i class="fa fa-clock-o"></i>Mon to Sat 9:00am to 18:00pm</li>
+                            </ul>
+                        </div>
+                        <div class="right">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a> </li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="row">
+                <section class="header_nav col-xs-12">
+                    <div class="logo col-xs-9 col-md-2">aesthetic</div>
+                    <div class="nav hidden-xs  hidden-sm col-md-10">
+                        <ul>
+                            <li class="active"><a href="#">home</a></li>
+                            <li><a href="#">about</a></li>
+                            <li><a href="#">services</a></li>
+                            <li><a href="#">pages</a>
+                                <ul>
+                                    <li><a href="#">pricing</a></li>
+                                    <li><a href="#">doctor</a></li>
+                                    <li><a href="#">blog details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">news</a></li>
+                            <li><a href="#">contact</a></li>
+                            <div class="btn"><a href="">appointment</a></div>
+                        </ul>
+                    </div>
+                    <div class="hidden-lg  hidden-md col-xs-3 side_bottom button_header">
+                        <button><i class="fa fa-bars"></i></button>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="bg">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <p>EIUSMOD TEMPOR INCIDIDUNT</p>
+                <h1>Take the world's best quality Treadment</h1>
+                <button type="button" class="btn btn-primary btn-lg">CONTACT US</button>
+            </div>
+        </div>
+    </div>
+    <div class="goodlist">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="biaodan">
+                    <p>REQUEST FOR YOUR</p>
+                    <h2>Consultation</h2>
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <input type="date" placeholder="data">
+                    <select>
+                        <p>Type ofserive</p>
+                        <option>Type ofserive</option>
+                        <option>Type ofserive</option>
+                        <option>Type ofserive</option>
+                        <option>Type ofserive</option>
+                        <option>Type ofserive</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <div>
+                    <p>WELCON TO AESTHETIC</p>
+                    <h3>Find Best Doctors With AESTHETIC</h3>
+                    <p>30 Years of experience in Cosmetic Surgery.Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 dian">
+                <div>
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="list">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h3>WHY CHOOSE US?</h3>
+                <h1> Offer for you</h1>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div>
+                    <img src="./img/ci-1.png" alt="">
+                    <h4>Advanced equipment</h4>
+                    <p>Lorem ipsum amet, consectetur adipiscing elit, sed do eiusmod tempor cididunt facilisis.</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div>
+                    <img src="./img/ci-2.png" alt="">
+                    <h4>Advanced equipment</h4>
+                    <p>Lorem ipsum amet, consectetur adipiscing elit, sed do eiusmod tempor cididunt facilisis.</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div>
+                    <img src="./img/ci-3.png" alt="">
+                    <h4>Advanced equipment</h4>
+                    <p>Lorem ipsum amet, consectetur adipiscing elit, sed do eiusmod tempor cididunt facilisis.</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div>
+                    <img src="./img/ci-4.png" alt="">
+                    <h4>Advanced equipment</h4>
+                    <p>Lorem ipsum amet, consectetur adipiscing elit, sed do eiusmod tempor cididunt facilisis.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <section class="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 left">
+                    <h2>
+                        <small>Secondary text</small>
+                        <div>h2. Bootstrap heading</div>
+                    </h2>
+                </div>
+                <div class="col-xs-12 visible-xs">
+                    <button type="button" class="btn btn-default btn-lg">Contact us</button>
+                </div>
+                <div class="col-xs-12 col-sm-6 btn1 hidden-xs">
+                    <button type="button" class="btn btn-default btn-lg ">Contact us</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <a href="#">
+                                <img class="media-object" src="./img/ci-1.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Body procedures</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor aliqua.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <a href="#">
+                                <img class="media-object" src="./img/ci-2.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Body procedures</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor aliqua.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <a href="#">
+                                <img class="media-object" src="./img/ci-3.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Body procedures</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor aliqua.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <a href="#">
+                                <img class="media-object" src="./img/ci-4.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Body procedures</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor aliqua.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </div>
+    <div class="box">
+        <div class="container">
+            <h1>Caroline Grant</h1>
+            <p>Plastic surgeon</p>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="hover">
+                    <img src="./img/team-1.jpg" alt="..." class="img-circle">
+                </div>
+                <h3>Caroline Grant</h3>
+                <p>Plastic surgeon</p>
+                <p>
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-dribbble"></i>
+                </p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="hover">
+                    <img src="./img/team-2.jpg" alt="..." class="img-circle">
+                </div>
+                <h3>Caroline Grant</h3>
+                <p>Plastic surgeon</p>
+                <p>
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-dribbble"></i>
+                </p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="hover">
+                    <img src="./img/team-3.jpg" alt="..." class="img-circle">
+                </div>
+                <h3>Caroline Grant</h3>
+                <p>Plastic surgeon</p>
+                <p>
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-dribbble"></i>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="photo">
+        <div class="col-xs-12 col-sm-9 photo-img">
+            <div class="col-xs-12 col-sm-4">
+                <div></div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div></div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div></div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div></div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div></div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div></div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 photo-b">
+            <!-- <div class="container"> -->
+            <div></div>
+            <!-- </div> -->
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 left">
+                    <h2>
+                        <small>Secondary text</small>
+                        <div>h2. Bootstrap heading</div>
+                    </h2>
+                </div>
+                <div class="col-xs-12 visible-xs">
+                    <button type="button" class="btn btn-default btn-lg">Contact us</button>
+                </div>
+                <div class="col-xs-12 col-sm-6 btn1 hidden-xs">
+                    <button type="button" class="btn btn-default btn-lg">Contact us</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-4 item-b">
+                    <div class="media">
+                        <h4>8 Ways to Save Your Skin if You Exercise Outside This Winter</h4>
+                        <p>Lorem ipsum, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                        <div class="media-left media-middle">
+                            <a href="#">
+                                <img class="media-object img-circle" src="./img/blog-author.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <p class="media-heading">John Doe Dec 06, 2019</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4 item-b">
+                    <div class="media">
+                        <h4>8 Ways to Save Your Skin if You Exercise Outside This Winter</h4>
+                        <p>Lorem ipsum, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                        <div class="media-left media-middle">
+                            <a href="#">
+                                <img class="media-object img-circle" src="./img/blog-author.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <p class="media-heading">John Doe Dec 06, 2019</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4 item-b">
+                    <div class="media">
+                        <h4>8 Ways to Save Your Skin if You Exercise Outside This Winter</h4>
+                        <p>Lorem ipsum, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                        <div class="media-left media-middle">
+                            <a href="#">
+                                <img class="media-object img-circle" src="./img/blog-author.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="media-body">
+
+                            <p class="media-heading">John Doe Dec 06, 2019</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="foot">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 footer">
+                    <img src="./img/footer-logo.png" alt="">
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 footer">
+                    <div class="input-group">
+                        <input type="email" class="form-control" value="Emali">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">SUBSCRIBE</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 foot-i">
+                    <i class="fa fa-search"></i>
+                    <i class="fa fa-user"></i>
+                    <i class="fa fa-scissors"></i>
+                    <i class="fa fa-plus-square"></i>
+                    <!-- <i class="fa fa-users"></i> -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                    <h2>Contact Us</h2>
+                    <p>About Us</p>
+                    <p>Departments</p>
+                    <p>Find a Doctor</p>
+                    <p>FAQ</p>
+                    <p>News</p>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-2">
+                    <h2>Quick links</h2>
+                    <p>Facial Fillers</p>
+                    <p>Breast Surgery</p>
+                    <p>Body Lifts</p>
+                    <p>Face & Neck</p>
+                    <p>Fat Reduction</p>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-2">
+                    <h2>Company</h2>
+                    <p>
+                        <i class="fa fa-search"></i>
+                        Los Angeles Gournadi, 1230 Bariasl
+                    </p>
+                    <p>
+                        <i class="fa fa-photo"></i>
+                        1-677-124-44227
+                    </p>
+                    <p>
+                        <i class="fa fa-search"></i>
+                        Support@gmail.com
+                    </p>
+
+                </div>
+                <div class="col-xs-6 col-sm-12 col-md-5">
+                    <div class="map"></div>
+                </div>
+            </div>
+            <div class="row font">
+                <div class="col-xs-12 col-sm-12 col-md-8">
+                    <p>Copyright © 2022 All rights reserved | This template is made with by 17sucai</p>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4">
+                    <p>All Rights Reserved Terms & Use Privacy Policy</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="./1.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

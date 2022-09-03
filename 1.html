@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @keyframes move {
+        from{
+            transform: scale(1);
+            border: 3px solid white;
+            opacity: 0.5;
+            
+        }
+        to{
+            border: 6px solid white;
+            transform: scale(1.1);
+            opacity: 0.1;
+
+        }
+        
+    }
+    body{
+        background: #000;
+    }
+    .box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+    }
+    .box .main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+    }
+    .box .small{
+        width: 60px;
+        height: 60px;
+    }
+    div{
+        animation: move 1s linear;
+        animation-iteration-count: infinite;
+        /* animation-direction: alternate-reverse; */
+        border-radius: 50%;
+        /* border: 5px solid rgba(128, 128, 128, 0.479); */
+    }
+
+</style>
+<body>
+    <div class="box">
+        <div class="main">
+            <div class="small"></div>
+        </div>
+    </div>
+</body>
+</html>
