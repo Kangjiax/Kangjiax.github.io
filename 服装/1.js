@@ -1,5 +1,6 @@
-var span = document.querySelectorAll('.nav span')[1]
+var span = document.querySelector('.nav .moon')
 var nav = document.querySelector('.nav');
+console.log(span);
 var bool = true
 var arr=['b1','b4','b3']
 var item=['your new style','custom made suits','styles and trends'];
@@ -44,6 +45,7 @@ window.onscroll = function () {
         })
     }
     span.onclick = function () {
+        console.log(span);
         if (bool) {
             document.querySelector('.nav span i').className = "fa fa-sun-o";
             bool = false

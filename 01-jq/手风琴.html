@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    body{
+        margin: 0;
+    }
+    .bigbox{
+        width: 100vw;
+        height: 100vh;
+        background-image: url("./2.jpg");
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* box-sizing: border-box; */
+        background-size: cover;
+    }
+    .box {
+        width: 390px;
+        height: 200px;
+        /* margin: 50px auto; */
+        /* box-sizing: border-box; */
+    }
+
+    .box div {
+        width: 30px;
+        height: 100%;
+        float: left;
+        background-size: cover;
+    }
+
+    .box div:nth-child(1) {
+        background-image: url("./1.jpg");
+        background-position: center center;
+    }
+
+    .box div:nth-child(2) {
+        width: 300px;
+        background-image: url("./2.jpg");
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .box div:nth-child(3) {
+        background-image: url("./3.jpg");
+    }
+
+    .box div:nth-child(4) {
+        background-image: url("./4.jpg");
+        /* display: auto; */
+
+    }
+</style>
+
+<body>
+    <div class="bigbox">
+
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <script>
+        $(".box div").click(function () {
+            $(this).css({width: 300}).siblings().css({width:30});
+            var n =$(this).index()+1
+            $(".bigbox").css("background-image","url('./"+n+".jpg')")
+        })
+    </script>
+</body>
+
+</html>

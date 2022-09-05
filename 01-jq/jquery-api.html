@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- <script>
+      $(function () {
+        $("button").css("color", "red");
+      });
+    </script> -->
+    <button>btn</button>
+    <!-- <img src="http://www.1234556xxxcc6.com/234" alt="" /> -->
+    <div class="box"><i>box</i></div>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+      }
+    </style>
+    <script>
+      // 选择器 $()
+
+      // 事件
+
+      // css操作
+
+      // dom操作 遍历操作
+
+      // 动画特效
+
+      // ajax
+
+      $("button").click(function () {
+        console.log(123);
+      });
+      $("button").click(function () {
+        console.log(456);
+      });
+
+      //   $("button").mouseover(function () {
+      //     console.log("over");
+      //   });
+      //   $("button").mouseout(function () {
+      //     console.log("out");
+      //   });
+
+      $("button").hover(
+        function () {
+          console.log("over");
+        },
+        function () {
+          console.log("out");
+        }
+      );
+
+      //   window.onload = function () {
+      //     console.log("图片等资源也已经加载完成");
+      //   };
+
+      //   $(document).ready(function () {
+      //     console.log("ready");
+      //   });
+      //   简写
+
+      //   $(function () {
+      //     console.log("ready");
+      //   });
+
+      //   window.onload = function(){} 用于整个网页（包括图片等）加载完毕后执行方法内代码块。
+      //  $(document).ready(function(){}) 用于 DOM 结构加载完毕后就可以执行方法内代码块，由此得出，onload 是在 ready 后执行。
+    </script>
+
+    <script>
+      // addClass() - 向被选元素添加一个或多个类
+      // removeClass() - 从被选元素删除一个或多个类
+      // toggleClass() - 对被选元素进行添加/删除类的切换操作
+      // css() - 设置或返回样式属性
+      console.log($(".box").css("width"));
+      $(".box").css("width", "200px");
+      //   css语法 读取是最终样式   设置时行间样式
+
+      $(".box").addClass("test").addClass("xxx").css("color", "red").removeClass("xxx");
+      //   因为每次jq的操作 都会返回被操作的jq对象 ，所以可以链式写法
+
+      $(".box").toggleClass("zzz");
+    </script>
+
+    <ul>
+      <li>item 1</li>
+      <li class="active">item 2</li>
+      <li>item 3</li>
+    </ul>
+    <input type="text" title="12300" id="xxx" class="yyy" />
+
+    <script>
+      $("ul li").addClass(function (index, current) {
+        console.log(index, current);
+        return "xx" + index;
+      });
+
+      console.log($(".box").html());
+      console.log($(".box").text());
+
+      $(".box").html("<mark>xxxx</mark>");
+
+      $(".box").text("<mark>xxxx</mark>");
+
+      $("input")[0].oninput = function () {
+        console.log($(this).val());
+      };
+
+      console.log($("input").attr("title"));
+      console.log($("input").attr("id"));
+      console.log($("input").attr("class"));
+
+      $("input").attr("id", "xxx123");
+    </script>
+
+    <script>
+      // $(".active").after("<li>xxx</li>");
+      // $(".active").after("xxx");
+      // $(".active").before("<li>yyy</li>");
+      // $(".active").before(document.createElement("li"));
+
+      $("ul").append("<li>xxx</li>");
+      $("ul").prepend("<li>xxx</li>");
+      $("ul").append($(".active"));
+
+      // $(".active").remove()
+      $(".active").empty();
+    </script>
+  </body>
+</html>

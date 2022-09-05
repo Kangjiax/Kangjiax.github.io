@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .big{
+        display: flex;
+    }
+    .big div {
+        margin-right: 10px;
+        display: flex;
+        font-size: 2em;
+        line-height: 100px;
+        /* color: white; */
+    }
+
+    .box {
+        /* margin-right: 10px; */
+        width: 50px;
+        height: 100px;
+        background-color: lightblue;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .box span {
+
+        transition: all 0.3s;
+        /* margin-top: -50px; */
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: red;
+        width: 100%;
+        height: 100px;
+    }
+</style>
+<div class="big">
+    <div class="yy">
+        <div class="box">
+            <span>0</span>
+
+        </div>
+        <div class="box">
+            <span>0</span>
+        </div>
+        月
+    </div>
+    <div class="dd">
+        <div class="box">
+            <span>0</span>
+
+        </div>
+        <div class="box">
+            <span>0</span>
+        </div>
+        日
+    </div>
+    <div class="tt">
+        <div class="box">
+            <span>0</span>
+        </div>
+        <div class="box">
+            <span>0</span>
+        </div>
+        点
+    </div>
+
+    <div class="mm">
+        <div class="box">
+            <span>0</span>
+
+        </div>
+        <div class="box">
+            <span>0</span>
+        </div>
+        分
+    </div>
+    <div class="ss">
+        <div class="box">
+            <span>0</span>
+
+        </div>
+        <div class="box">
+            <span>0</span>
+        </div>
+        秒
+    </div>
+</div>
+<script>
+    function show(ele, n) {
+        var first = ele.getElementsByTagName('span')[0]
+        // console.log(first);
+        if (first.innerText !== n) {
+            var num = document.createElement('span')
+            num.innerText = n;
+            ele.appendChild(num);
+            first.style.marginTop = "-100px"
+            setTimeout(function () {
+                ele.removeChild(first);
+            }, 300)
+        }
+    }
+    setInterval(function () {
+        var now = new Date();
+        var ss = String(now.getSeconds()).padStart(2, "0");
+        var ssDom = document.querySelector('.ss');
+        ssDom.querySelectorAll(".box").forEach(function (el, i) {
+            show(el, ss[i])
+        })
+        var yy = String(now.getMonth()+1).padStart(2, "0");
+        var yyDom = document.querySelector('.yy');
+        yyDom.querySelectorAll(".box").forEach(function (el, i) {
+            show(el, yy[i])
+        })
+        var dd = String(now.getDate()).padStart(2, "0");
+        var ddDom = document.querySelector('.dd');
+        ddDom.querySelectorAll(".box").forEach(function (el, i) {
+            show(el, dd[i])
+        })
+        var tt = String(now.getHours()).padStart(2, "0");
+        var ttDom = document.querySelector('.tt');
+        ttDom.querySelectorAll(".box").forEach(function (el, i) {
+            show(el, tt[i])
+        })
+        var mm = String(now.getMinutes()).padStart(2, "0");
+        var mmDom = document.querySelector('.mm');
+        mmDom.querySelectorAll(".box").forEach(function (el, i) {
+            show(el, mm[i])
+        })
+
+    }, 1000)
+
+
+
+
+
+
+            // setInterval(function () {
+            //     var now = new Date();
+            //     var ss = String(now.getSeconds()).padStart(2, "0");
+            //     var ssDom = document.querySelector(".ss")
+            //     ssDom.querySelectorAll("div").forEach(function (el, i) {
+            //         num(el, ss[i])
+            //     }
+
+            //     );
+            // }, 1000)
+</script>
+
+<body>
+
+</html>

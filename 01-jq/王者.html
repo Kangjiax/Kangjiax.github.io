@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    .bb{
+        width: 850px;
+        height: 150px;
+        background-color: rgb(81, 74, 165);
+        color: white;
+    }
+    .bigbox {
+        width: 850px;
+        height: 200px;
+        display: flex;
+    }
+
+    .bigbox p {
+        width: 16px;
+        height: 100%;
+    }
+
+    .box {
+        width: 800px;
+        height: 130px;
+        display: flex;
+        /* background-color: rgb(81, 74, 165); */
+    }
+
+    .box .img {
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .box .img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .box .img:hover {
+        width: 224px;
+        height: 100px;
+        background-position: center center;
+        background-size: 100%;
+    }
+
+    /* .box .img:hover img {
+        display: none;
+    } */
+</style>
+
+<body>
+    <div class="bb">
+        <p>周末限免</p>
+        <div class="bigbox">
+            <div class="box">
+                <div class="img">
+                    <img src="./image/xiahou.jpg">
+                </div>
+                <div class="img">
+                    <img src="./image/zhenji.jpg">
+                </div>
+                <div class="img">
+                    <img src="./image/libai.jpg">
+                </div>
+                <div class="img">
+                    <img src="./image/liyuanfang.jpg">
+                </div>
+                <div class="img">
+                    <img src="./image/lixin.jpg">
+                </div>
+                <div class="img">
+                    <img src="./image/lubandashi.jpg">
+                </div>
+                <div class="img">
+                    <img src="./image/jing.jpg">
+                </div>
+            </div>
+            <p>更多英雄</p>
+
+        </div>
+    </div>
+    <script>
+        $(".box .img").hover(function () {
+            var n = $(this).index() + 1
+            $(this).css({
+                width: 224,
+                height: 100,
+                backgroundImage: "url('./image/sfq" + n + ".png')"
+            }).siblings().css({
+                width: 100,
+                height: 100,
+                backgroundImage: "none",
+            })
+            $(".box .img img").eq($(this).index()).hide().siblings().show()
+        },
+            function () {
+                $(this).css({
+                    width: 100,
+                    height: 100,
+                })
+                $(".box .img img").eq($(this).index()).css("display", "block")
+            })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style>
+    .box {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        background-image: url("./copy.jpg");
+        background-size: cover;
+        /* background-position: center center; */
+    }
+
+    .box .mark {
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        background-color: rgba(0, 0, 255, 0.521);
+    }
+
+    .bigbox {
+        background-repeat: no-repeat;
+        width: 400px;
+        height: 400px;
+        background-size: 200%;
+        background-image: url("./copy.jpg");
+
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="mark"></div>
+    </div>
+    <hr>
+    <div class="bigbox">
+    </div>
+    <script>
+        var num = 4
+        function show(num) {
+            $(".bigbox").css("backgroundSize", num * 100 + "%")
+            $(".box .mark").css({
+                width: $(".box").width() / num,
+                height: $(".box").height() / num
+            })
+            var mx = $(".box").width() - $(".box .mark").width()
+            var my = $(".box").height() - $(".box .mark").height()
+            $(".box").mousemove(function () {
+                var x = event.offsetX - $(".box").width() / num / 2
+                var y = event.offsetY - $(".box").height() / num / 2
+                // x<0?x=0:x
+                x<0?x=0:x;
+                x>mx?x=mx:x;
+                y<0?y=0:y;
+                y>my?y=my:y;
+                $(".box .mark").css({
+                    left: x,
+                    top: y,
+                })
+                $(".bigbox")[0].style.backgroundPosition = - 2 * num * x + "px " + - 2 * num * y + "px"
+            })
+        }
+        show(num)
+    </script>
+</body>
+
+</html>

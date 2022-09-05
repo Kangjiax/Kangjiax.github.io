@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .bg{
+        /* position: relative; */
+        width: 100%;
+        height: 1000px;
+        background-repeat:no-repeat;  
+        background-size: cover;
+        background-image: url(./1.jpg);
+        display: flex;
+        align-items: center;
+    }
+    .bg .big{
+        /* position: absolute; */
+        /* bottom: 300px; */
+        font-size: 2em;
+        width: 1000px;
+        /* left: 45%; */
+        margin: 0 auto;
+    }
+    .title {
+        margin: 0 auto;
+        width: 500px;
+        overflow: hidden;
+    }
+    .title div{
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: rgba(128, 128, 128, 0.501);
+        color: white;
+        text-align: center;
+        line-height: 100px;
+        margin: 10px
+    }
+    .box{
+        margin: 0 auto;
+        width: 500px;
+        overflow: hidden;
+    }
+    .box div{
+        width: 100px;
+        height: 100px;
+        background-color: rgba(128, 128, 128, 0.501);
+        color: white;
+        text-align: center;
+        line-height: 100px;
+        margin: 15px 10px;
+        float: left;
+    }
+    .box div:hover{
+        /* margin-bottom: 10px; */
+        margin: 10px;
+        /* color: red; */
+    }
+    .big p{
+        text-align: center;
+        color: orange;
+        font-size: 2em;
+    }
+</style>
+<body>
+    <div class="bg">
+        <div class="big">
+            <p>距离2023年9月1日还有:</p>
+            <div class="title">
+                <div>Day</div>
+                <div>Time</div>
+                <div>Min</div>
+                <div>Miao</div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <!-- <div></div> -->
+            </div>
+        </div>
+    </div>
+    <script>
+        var PI = 3.144548268454685;
+
+        console.log(Number.MAX_VALUE);
+        console.log(Number.MIN_VALUE);
+        console.log(Number.NEGATIVE_INFINITY); // -Infinity
+        console.log(Number.POSITIVE_INFINITY); // Infinity
+        console.log(NaN);
+        console.log(Infinity);
+        // isfinity是否为无穷大
+        console.log(Number.isFinite(PI));
+        console.log(isFinite(PI));
+        //   如果 number 是 NaN（非数字），或者是正、负无穷大的数，则返回 false。
+        console.log(Number.isInteger(PI));//是否为整数
+        //   安全整数范围为 -(2^53 - 1) 到 2^53 - 1 之间的整数，包含 -(2^53 - 1) 和 2^53 - 1。
+        console.log(Number.isNaN(PI));//是否为NaN
+        console.log(isNaN(PI));
+        console.log(1 + 2);
+        console.log(0.1 + 0.2);
+
+        console.log(PI.toExponential());
+        console.log(PI.toFixed(3)); // 保留小数
+        console.log(PI.toPrecision(4));//保留长度
+        //paresInt 保留整数
+        console.log(parseInt(3.14));
+        console.log(parseInt(3.55));
+        console.log(parseInt("a10"));
+        console.log(parseInt("10a"));//10
+        console.log(parseInt("10px"));//10
+        // 保留数字
+        console.log(parseFloat(3.14));
+        console.log(parseFloat("3.14"));
+        console.log(parseFloat("3.14.11a"));
+        console.log(parseFloat("3a.14.11a"));
+        // 把字符串编码url
+        console.log(encodeURI("http://127.0.0.1:5500/04-js-api/03/Number.html?name=王大锤"));//
+        //把url解码变成字符串
+        console.log(decodeURI("http://127.0.0.1:5500/04-js-api/03/Number.html?name=%E7%8E%8B%E5%A4%A7%E9%94%A4"));
+        //把字符串编码为 URI 组件。
+        console.log(encodeURIComponent("http://127.0.0.1:5500/04-js-api/03/Number.html,?name=王大锤"));
+        //把 URI 组件解码为字符串。
+        console.log(
+            decodeURIComponent(
+                "http%3A%2F%2F127.0.0.1%3A5500%2F04-js-api%2F03%2FNumber.html%2C%3Fname%3D%E7%8E%8B%E5%A4%A7%E9%94%A4"
+            )
+        );
+    </script>
+    <script>
+        var now = new Date();
+        console.log(now);
+        //  1970 年 1 月 1 日 00:00:00 UTC（the Unix epoch）以来的毫秒数
+        var d = new Date(0)
+        console.log(d);
+        var d = new Date(2022, 06, 28);
+        console.log(d < now);
+        //get
+        console.log(d.getTime() < now.getTime());
+        console.log(now.getTime() - d.getTime());
+        console.log(now.getFullYear());//年
+        console.log(now.getMonth());//月
+        console.log(now.getDate());//日
+        console.log(now.getHours());//时
+        console.log(now.getMinutes());//分
+        console.log(now.getSeconds());//秒
+        console.log(now.getMilliseconds());//毫秒
+        console.log(now.getTime());//从1970年到现在的毫秒
+        console.log(now.getTimezoneOffset());//	返回本地时间与格林威治标准时间 (GMT) 的分钟差。
+        console.log(now.getUTCHours());	//根据世界时返回 Date 对象的小时 (0 ~ 23)。
+        //set
+        var d = new Date();
+        //   d.setDate(18);
+        //   d.setHours(0);
+
+        // 取一天之后的现在
+        //   d.setDate(29);
+        d.setDate(28 + 5);
+        console.log(d);
+        //to
+        console.log(d.toDateString());//把 Date 对象的日期部分转换为字符串。
+        console.log(d.toLocaleDateString());//根据本地时间格式，把 Date 对象的日期部分转换为字符串。
+        console.log(d.toTimeString());//把 Date 对象的时间部分转换为字符串。
+        console.log(d.toLocaleTimeString());//根据本地时间格式，把 Date 对象转换为字符串。
+        console.log(d.toString());
+        var n = Date.now();
+    </script>
+
+    <style>
+        
+    </style>
+    <script>
+        var box = document.querySelectorAll(".box div")
+        console.log(box);
+        function show(n) {
+            return n > 9 ? String(n) : "0" + n;
+        }
+        function getTime() {
+            var now = new Date();
+            var date = new Date('2023-9-1')
+            var n = date - now;
+            // console.log(n);
+            var days = parseInt(n / 1000 / 60 / 60 / 24)
+            var time = parseInt(n / 1000 / 60 / 60 % 24);
+            var min = parseInt(n / 1000 / 60 % 60);
+            var miao = parseInt(n / 1000 % 60)
+            box[0].innerHTML = show(days)
+
+            box[1].innerHTML = show(time)
+            box[2].innerHTML = show(min)
+            // box[3].innerHTML=miao
+                box[3].innerHTML = show(miao)
+        }
+        setInterval("getTime()", 1000)
+        // getTime()
+    </script>
+</body>
+
+</html>

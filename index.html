@@ -1,15 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
 </head>
+<style>
+    @keyframes move {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes move1 {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(-360deg);
+        }
+    }
+
+    .big {
+        width: 150px;
+        height: 150px;
+        border: 1px solid transparent;
+        border-left-color: blue;
+        border-right-color: blue;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: move 2s linear infinite;
+    }
+
+    .small {
+        width: 130px;
+        height: 130px;
+        border: 1px solid transparent;
+        border-bottom-color: blue;
+        border-top-color: blue;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: move1 3s linear infinite;
+    }
+
+    .small .main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 110px;
+        height: 110px;
+        border: 1px solid transparent;
+        border-left-color: blue;
+        border-right-color: blue;
+        border-radius: 50%;
+        animation: move1 10s linear infinite;
+    }
+
+    .imgs {
+        animation: move1 6s linear infinite;
+    }
+</style>
+
 <body>
-    <a href="./loading.html"><img src="./1662018091386.jpg" alt=""></a>
+    <div class="box">
+        <div class="item">
+            <div class="big">
+                <div class="small">
+                    <div class="main">
+                        <div class="imgs"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div>
+                <h1>bookstop</h1>
+                <a href="../整容/1.html">整容</a>
+                <a href="../服装/1.html">服装</a>
+            </div>
+            <div>
+                <h1>js+css3</h1>
+                <a href="./loading.html">loading</a>
+                <a href="./360/1.html">360</a>
+            </div>
+            <div>
+                <h1>javascript</h1>
+                <a href="./js/钢琴大师.html">钢琴大师</a>
+                <a href="./js/卡片.html">卡片记忆</a>
+                <a href="./js/找找色块.html">找色块</a>
+                <a href="./js/九宫格抽奖.html">九宫格抽奖</a>
+                <a href="./js/未来时间倒计时.html">未来时间倒计时</a>
+            </div>
+            <div>
+                <h1>jquery</h1>
+                <a href="./01-jq/手风琴.html">手风琴</a>
+                <a href="./01-jq/轮播图.html">轮播图</a>
+                <a href="./01-jq/放大镜.html">放大镜</a>
+                <a href="./01-jq/王者.html">王者</a>
+                <a href="./01-jq/海绵宝宝.html">海绵宝宝</a>
+            </div>
+        </div>
+    </div>
+    <!-- <a href="./loading.html"><img src="./1662018091386.jpg" alt=""></a>
     <a href="./360/1.html"><img src="./Snipaste_2022-09-01_21-56-55.png" alt=""></a>
     <a href="../整容/1.html">整容</a>
-    <a href="../服装/1.html">服装</a>
+    <a href="../服装/1.html">服装</a> -->
 </body>
+
 </html>

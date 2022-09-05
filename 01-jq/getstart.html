@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- 
+1.x 兼容ie6
+2.x 兼容 ie789
+3.x 使用es6语法 css3
+     -->
+    <!-- jQuery 是一个 JavaScript DOM操作库。 lodash 函数库 -->
+
+    <ul class="list">
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+    </ul>
+    <div class="box">box</div>
+    <script>
+      console.log($);
+      console.log(jQuery === $);
+
+      //   选择器.操作
+
+      //   原生js
+      //   document.querySelector(".box").style.color = "red";
+      //   document.querySelector(".box").style.width = "100px";
+      //   document.querySelector(".box").style.height = "100px";
+      //   document.querySelector(".box").style.background = "lightblue";
+
+      //   选择器  $("")  选中的是 jQuery对象 不是DOM对象
+      //   $(".box").css("color", "red");
+      //   $(".box1").css("color", "red");
+
+      //   $(".box").css({
+      //     color: "red",
+      //     width: "100",
+      //     height: 100,
+      //     background: "lightblue",
+      //   });
+
+      //   第一个区别  即便没有选中元素 也不会报错 不会阻止后续代码执行
+
+      //   $(".box").style.color = "red";
+      //   document.querySelector(".box").css("color", "red");
+      // jquery 对象 和 js对象不一样 不要混用方法
+      /* 
+    互转
+    */
+
+      // dom转jq $()
+      $(document.querySelector(".box")).css("color", "red");
+      //   jq转dom
+      $(".box")[0].style.width = "100px";
+    </script>
+
+    <script>
+      $("ul.list li").css("color", "red");
+      //   第二个区别  不需要遍历
+    </script>
+  </body>
+</html>

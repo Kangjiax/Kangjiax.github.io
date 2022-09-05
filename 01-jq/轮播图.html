@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<style>
+    .bigbox{
+        width: 500px;
+        height: 300px;
+        position: relative;
+        margin: 0 auto;
+    }
+    .box {
+        width: 500px;
+        height: 300px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .box img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: none;
+        top: 0;
+        left: 0;
+    }
+
+    .box img:first-child {
+        display: block;
+    }
+
+    ul {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 0 auto;
+        width: 100%;
+        padding: 0;
+        list-style: none;
+        /* float: left; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* margin: 0 auto; */
+    }
+
+    ul li {
+        z-index: 999;
+        margin: 20px 40px;
+        width:10px;
+        height: 10px;
+        background-color: gray;
+        border-radius: 16px;
+    }
+
+    .red {
+        width: 30px;
+        background-color: white;
+    }
+    .btn{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .btn button{
+        background-color: transparent;
+        font-size: 32px;
+        border: 0;
+        color:blue;
+    }
+</style>
+<body>
+    <div class="bigbox">
+        <div class="box">
+            <img src="./1.jpg" alt="">
+            <img src="./2.jpg" alt="">
+            <img src="./3.jpg" alt="">
+            <img src="./4.jpg" alt="">  
+        </div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="btn">
+            <button><</button>
+            <button>></button>
+        </div>
+    </div>
+    <script>
+        var num=0;
+        $("ul li").eq(0).addClass("red")
+        $("ul li").click(function () {
+            $(this).addClass("red").siblings().removeClass("red")
+            num =  $(this).index()
+            $("img").eq($(this).index()).css("display", "block").siblings().css("display","none")
+        })
+        function show(){
+            if (num> $("img").length-1) {
+                num=0   
+            }
+            $("img").eq(num).css("display", "block").siblings().css("display","none")
+            $("ul li").eq(num).addClass("red").siblings().removeClass("red")
+            num++;
+        }
+        $("button").eq(0).click(function(){
+            if (num<0) {
+                num=$("img").length+num
+            }
+            $("img").eq(num).css("display", "block").siblings().css("display","none")
+            $("ul li").eq(num).addClass("red").siblings().removeClass("red")
+            num--
+        })
+        $("button").eq(1).click(function(){
+            show()
+        })
+        setInterval(show,4000)
+    </script>
+</body>
+
+</html>

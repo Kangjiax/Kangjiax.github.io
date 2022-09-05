@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+</head>
+<style>
+    .box {
+        width: 400px;
+        height: 400px;
+        background-color: aqua;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+
+    .box div {
+        background-color: red;
+        /* margin: 10px; */
+        outline: 1px solid black;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box div i {
+        font-size: 2em;
+        color: red;
+    }
+
+    div.open {
+        color: white;
+        background-color: antiquewhite;
+    }
+
+    div.act {
+        background-color: aqua;
+        color: white;
+
+    }
+
+    div.equal {
+        background-color: antiquewhite;
+    }
+</style>
+
+<body>
+    <div class="box"></div>
+    di
+</body>
+<script>
+    var box = document.querySelector(".box")
+    console.log(box);
+    var nums = ["futbol-o", "hand-peace-o", "star", "thumbs-up", "trophy", "spinner", "puzzle-piece", "graduation-cap"];
+    function add(nums) {
+        nums.forEach(function (e) {
+            nums.push(e)
+            // nums.sort()
+        })
+    }
+    add(nums)
+    function sort(nums) {
+        nums.sort(function (a, b) {
+            return Math.random() - 0.5
+        })
+    }
+    sort(nums);
+
+
+    nums.forEach(function (e, i) {
+        var node = document.createElement('div');
+        node.innerHTML = '<i class="fa fa-' + e + '"></i>';
+        box.appendChild(node);
+        // node.classList.add("open")
+        node.onclick = function () {
+            this.classList.add("open")
+            // console.log(this);
+            var openList = [];
+            // var dd= box.querySelectorAll("div");
+            // dd.forEach(function (e,i) {
+            //     if(dd[i].classList.contains("open")){
+
+            //         openList.push(dd[i].classList.contains("open"))
+            //     }
+            // })
+            var actList = []
+            var dd = box.children;
+            for (var i = 0; i < dd.length; i++) {
+                if (dd[i].classList.contains("open")) {
+                    openList.push(dd[i])
+                }
+            }
+            // console.log(openList);
+            if (openList.length === 2) {
+                setTimeout(function () {
+                    openList[0].classList.remove("open")
+                    openList[1].classList.remove("open")
+                }, 500)
+
+                if (openList[0].innerHTML === openList[1].innerHTML) {
+                    openList[0].classList.add("act")
+                    openList[1].classList.add("act")
+                    var act = []
+                    for (var i = 0; i < dd.length; i++) {
+                        if (dd[i].classList.contains("act")) {
+                            act.push(dd[i])
+                        }
+                    }
+                    if (act.length === dd.length) {
+                        setTimeout(function(){
+                            window.alert("恭喜通关")
+
+                        },200)
+
+                    }
+                }
+
+            }
+
+
+        }
+
+    }) 
+</script>
+
+</html>

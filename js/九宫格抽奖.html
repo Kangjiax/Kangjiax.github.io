@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .big {
+        margin: 0 auto;
+        width: 400px;
+        height: 500px;
+        /* background-color: aqua; */
+    }
+
+    .big .input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 400px;
+        height: 100px;
+
+    }
+
+    .big .input div {
+        /* outline: 1px solid black; */
+        box-shadow: 0 0 5px 0 black;
+        width: 300px;
+        height: 50px;
+        /* font-size: em; */
+        text-align: center;
+        line-height: 50px;
+        margin: 0 auto;
+        /* background-color: azure; */
+        color: red;
+    }
+
+    .big .box {
+        width: 400px;
+        height: 400px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .big .box div {
+        margin: 10px;
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        color: white;
+        text-align: center;
+        line-height: 100px;
+        font-size: 1.5em;
+
+    }
+
+    .box div.gray {
+        background-color: gray;
+    }
+</style>
+
+<body>
+    <div class="big">
+        <div class="input">
+            <div></div>
+        </div>
+        <div class="box">
+            <div class="gray">手机</div>
+            <div>电脑</div>
+            <div>女朋友</div>
+            <div>男朋友</div>
+            <div>点击</div>
+            <div>冰箱</div>
+            <div>华为手机</div>
+            <div>空调</div>
+            <div>足球</div>
+        </div>
+</body>
+<script>
+    var input = document.getElementsByClassName("input")[0].getElementsByTagName("div")[0]
+    console.log(input);
+    var box = document.querySelector(".box");
+    var index = [0, 1, 2, 5, 8, 7, 6, 3];
+    var arr = []
+    var num = 0
+    var bool = true;
+    var boxEl = box.querySelectorAll("div")
+    boxEl[4].style.backgroundColor = "orangered"
+    index.forEach(function (e) {
+        arr.push(boxEl[e])
+    })
+    function show(arr, num) {
+        if (bool === true) {
+            bool=false;
+            time = setInterval(function () {
+                arr.forEach(function (e, i) {
+                    arr[i].style.backgroundColor = "lightblue";
+                })
+                arr[num].style.backgroundColor = "gray";
+                num++;
+                if (num == 8) {
+                    num = 0
+                }
+                // 随机生成一个数
+                var n = Math.floor(Math.random() * 30);
+                // 找出随机数等于num
+                if (n == num) {
+                    arr.forEach(function (e, i) {
+                        arr[i].style.backgroundColor = "lightblue";
+                    })
+                    arr[n].style.backgroundColor = "orange";
+                    input.innerText = "恭喜你中了:" + arr[n].innerText
+                    console.log(input.innerText);
+                    clearInterval(time);
+                    num = 0
+                    bool=true
+                }
+            }, 50)
+        }
+
+    }
+    boxEl[4].onclick = function () {
+        show(arr, num)
+    }
+
+
+</script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    .red{
+        background-color: red;
+    }
+    .yellow{
+        background-color: yellow;
+    }
+    .blue{
+        background-color: blue;
+    }
+</style>
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <div>kaghakgghjagagh</div>
+    <div>jaghakgghjagagh</div>
+    <div>xaghakgghjagagh</div>
+    <script>
+        $("div").hide().eq(0).show()
+        $("button").eq(0).addClass("red")
+        var arr=["red","blue","yellow"];
+        $("button").click(function(){
+            $(this).addClass(arr[$(this).index()]).siblings().removeClass()
+            $("div").hide().eq($(this).index()).show();
+            // console.log(this);
+            // $(this).addClass("red").siblings().removeClass("red")
+        })
+    </script>
+    <script>
+    
+    </script>
+</body>
+
+</html>

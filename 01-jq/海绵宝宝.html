@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<style>
+    .box {
+        width: 480px;
+        height: 350px;
+        /* box-shadow: 0 0 10px 0 gray; */
+        margin: 0 auto;
+        border-radius: 12px 12px;
+        position: relative;
+    }
+
+    .box .move {
+        width: 480px;
+        height: 270px;
+        background-image: url('./eee63cd.webp');
+        background-size: cover;
+        overflow: hidden;
+        border-radius: 12px;
+        position: relative;
+        /* background-repeat: no-repeat; */
+    }
+
+    .box .danwu {
+        width: 480px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 12px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* background-repeat: no-repeat; */
+    }
+
+    .box .span {
+        display: none;
+        left: 10px;
+        bottom: 100px;
+        color: white;
+        position: absolute;
+    }
+
+    .box .danwu .p {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        color: aqua;
+        pointer-events: none;
+    }
+
+    .box .danwu .p p {
+        white-space: nowrap;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        padding: 0;
+        margin: 0;
+        transition: all 8s linear;
+    }
+
+    .box .jindu {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 480px;
+        height: 10px;
+        background-color: gray;
+        border-radius: 5px;
+        padding: 3px;
+        box-sizing: border-box;
+        display: none;
+    }
+
+    .box .jindu .bg {
+        display: none;
+        height: 5px;
+        background-color: orange;
+        border-radius: 12px;
+    }
+
+    .item {
+        width: 480px;
+        pointer-events: none;
+    }
+
+    .item i {
+        margin: 5px;
+        color: gray;
+    }
+
+    .box:hover {
+        color: blue;
+    }
+
+    .box:hover .item {
+        display: none;
+    }
+
+    .box:hover .span {
+        display: block;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="move"></div>
+        <div class="danwu">
+            <div class="p">
+                <p class="act">快来吐槽吧~~</p>
+            </div>
+        </div>
+        <div class="jindu">
+            <div class="bg"></div>
+        </div>
+        <div class="span">13:09</div>
+        <p>海绵宝宝 中文配音</p>
+        <div class="item"><i class="fa fa-caret-square-o-right">122.7万</i> <i class="fa fa-file-text">6398</i> </div>
+    </div>
+    <script>
+        // https://www.bilibili.com/anime/?spm_id_from=333.1007.0.0
+        var pvideo = {
+            duration: 1303,
+            img_x_len: 10,
+            img_y_len: 10,
+            img_x_size: 480,
+            img_y_size: 270,
+            image: [
+                "//bimp.hdslb.com/videoshotpvhdboss/486142478_dc4dcb-0001.jpg",
+                "//bimp.hdslb.com/videoshotpvhdboss/486142478_dc4dcb-0002.jpg",
+            ],
+            index: [
+                0, 0, 8, 14, 20, 25, 31, 39, 50, 61, 67, 73, 80, 87, 93, 104, 116, 126, 132, 138, 144, 152, 159, 170, 177,
+                186, 196, 207, 215, 224, 231, 238, 244, 249, 255, 260, 265, 271, 278, 283, 290, 297, 303, 311, 319, 330, 335,
+                350, 360, 365, 372, 383, 390, 401, 406, 411, 421, 428, 434, 444, 450, 457, 467, 472, 481, 487, 497, 502, 514,
+                520, 534, 542, 547, 555, 562, 568, 575, 581, 587, 592, 598, 605, 610, 615, 621, 633, 642, 650, 658, 668, 677,
+                690, 696, 702, 709, 715, 720, 733, 740, 746, 751, 759, 767, 776, 782, 790, 798, 804, 814, 826, 833, 840, 850,
+                856, 863, 872, 878, 886, 896, 903, 911, 918, 929, 937, 948, 953, 959, 965, 973, 979, 985, 994, 1001, 1015,
+                1022, 1028, 1034, 1040, 1047, 1059, 1064, 1071, 1077, 1084, 1090, 1099, 1105, 1111, 1121, 1130, 1139, 1150,
+                1156, 1162, 1171, 1178, 1184, 1191, 1197, 1203, 1210, 1216, 1221, 1228, 1233, 1242, 1250, 1260, 1272, 1282,
+                1292, 1297,
+            ],
+        };
+        var dm = [
+            "章鱼哥还是没有胜过强风暴雨(doge)",
+            "日本裁判",
+            "日本裁判",
+            "海绵宝宝笑死我了",
+            "黑人小哥",
+            "堡垒之夜",
+            "最喜欢的一集",
+            "最喜欢的一集",
+            "喜欢",
+            "我怎么觉得派大星这个配音我在神奇宝贝里听过",
+            "我看见你了",
+            "但凡章鱼哥早点回去都不至于这样",
+            "这……这我还真有可能“模仿”",
+            "为什么非要执着于台配或者央配呢",
+            "派总依旧稳定输出",
+            "包租公～",
+            "为什么台配的海绵宝宝跟低能儿似的",
+            "井字游戏，其实可以先手必胜的",
+            "我小时候就看的台配",
+            "终于找到了",
+        ];
+        
+        var n1 = 0
+        var time = 0
+        $(".box").hover(function () {
+            if ($(this).find(".p p").length < dm.length) {
+                dm.forEach(function (e) {
+                    $(this).find(".danwu .p").append("<p>" + e + "</p>")
+                }, this)
+                time = setInterval(function () {
+                    console.log($(".box").find(".danwu .p").find("p"));
+                    $(".box").find(".danwu .p").find("p").eq(n1).css(
+                        {left: -$(".box").find(".danwu p").eq(n1).width()})
+                    if (n1 == dm.length) {
+                        setTimeout(function () {
+                            $(".box").find(".danwu .p").empty()
+                            dm.forEach(function (e) {
+                                $(".box").find(".danwu .p").append("<p>" + dm[Math.floor(Math.random() * dm.length)] + "</p>")
+                            })
+                        }, 6000);
+                    }
+                    n1++
+                }, 3000,this)
+            }
+            $(".box .move").css({ 
+            backgroundSize: 1000 + "%",
+            backgroundImage : 'url(./1.jpg)'
+        })
+            $(this).mousemove(function () {
+                // console.log(event);
+                $(this).find(".jindu").show()
+                // console.log(event.offsetX,event.target);
+                $(this).find(".bg").css("width", event.offsetX).show()
+                $(".box .move")[0].style.backgroundPosition = event.pageX * 480 + "px " + event.pageY * 270 + "px"
+            })
+        }, function () {
+            $(this).find(".p").empty()
+            $(".box .move")[0].style.backgroundImage = 'url(./eee63cd.webp)';
+            $(".box .move").css({ backgroundSize: "100%", backgroundPosition: 0 })
+            $(this).find(".bg").hide().end().find(".jindu").hide()
+            clearInterval(time)
+        })
+
+    </script>
+
+</body>
+
+</html>

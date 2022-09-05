@@ -39,6 +39,8 @@
         .swiper-slide {
             text-align: center;
             font-size: 18px;
+            display: flex;
+            flex-flow: column;
             /* background: #fff; */
             /* Center slide text vertically */
             display: -webkit-box;
@@ -84,12 +86,12 @@
         .item {
             left: 200px;
             color: #fff;
-            /* top: 0; */
+            top: 250px;
             text-align: left;
             position: absolute;
             transition: all 6s;
             opacity: 0;
-            font-size: 40px;
+            font-size: 25px;
         }
 
         .act {
@@ -148,8 +150,8 @@
 
         button {
             font-size: 32px;
-            width: 250px;
-            height: 80px;
+            width: 200px;
+            height: 60px;
             color: white;
             background-color: black;
             border-radius: 32px;
@@ -171,7 +173,7 @@
         .imgs .imgs-item {
             position: relative;
             z-index: 1;
-            margin-top: 300px;
+            margin-top: 200px;
             font-size: 1em;
         }
 
@@ -182,6 +184,7 @@
         .imgs .imgs-item button {
             position: relative;
             margin: 10px;
+            background-color: rgba(128, 128, 128, 0.541);
         }
         .imgs .imgs-item button:nth-of-type(2){
             background-color: #fff;
@@ -192,7 +195,7 @@
             position: absolute;
             font-size: 25px;
             right: 0;
-            top: -10px;
+            top: -15px;
             background-color: red;
             display: block;
         }
@@ -201,7 +204,7 @@
             width: 100%;
             position: fixed;
             left: 0;
-            top: 0;
+            top: 30px;
             height: 50px;
         }
         .nav-box{
@@ -225,6 +228,15 @@
             text-decoration: none;
             color: gray;
             margin: 0 10px;
+        }
+        .foot {
+            width: 100%;
+            background-color:rgba(128, 128, 128, 0.164);
+         
+            padding-bottom: 150px;
+            padding-top: 30px;
+            color:rgba(128, 128, 128, 0.514);
+    
         }
     </style>
 </head>
@@ -294,6 +306,13 @@
                     <button>全面加速</button>
                 </div>
                 <video autoplay loop src="./vidio/极光.mp4"></video>
+                <div class="foot">
+                    <p>Copyright © 2005-2022 360.CN All Rights Reserved 360互联网安全中心
+                        隐私政策京ICP证080047号[京ICP备08010314号-6]</p>
+                    <p>
+                        网站举报电话:4006693600 举报邮箱:kefu@360.cn 互联网违法和不良信息举报中心:https://www.12377.cn</p>
+                    <p> 京公网安备 11000002000006号</p>
+                </div>
             </div>
         </div>
         <div class="swiper-pagination"></div>
