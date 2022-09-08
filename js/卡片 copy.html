@@ -10,87 +10,106 @@
 
 </head>
 <style>
+    body{
+        height: 100vh;
+        background-image: linear-gradient(blue,rgb(189, 12, 41),pink);
+        
+    }
     .box {
-        width: 400px;
-        height: 400px;
-        background-color: aqua;
+        width: 480px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        /* background-color: aqua; */
         display: flex;
         flex-wrap: wrap;
-        margin: 0 auto;
-       
-       
+        margin: 50px auto;
     }
 
     .box div {
         transform-style: preserve-3d;
         transform: rotateY(0);
-        transition: all 3s;
-        outline: 1px solid black;
-        background-color: black;
+        transition: all .5s;
+        border: 5px solid rgb(192, 13, 73);
+        background-color: pink;
+        margin: 10px 0;
+        border-radius: 12px;
         width: 100px;
-        height: 100px;
+        height: 120px;
         display: flex;
-        color: white;
         justify-content: center;
         align-items: center;
         position: relative;
-        transform: rotateY(0deg);
+        transform: rotateY(180deg);
         
     }
-    /* .box div::before{
-        display: block;
-        content: "";
-        width: 100px;
-        height: 100px;
-        top: 0;
-        left: 0;
-        position: absolute;
-        background-color: red;
-    } */
-    .box div div{
+    .box div span{
         display: block;
         width: 100px;
-        height: 100px;
-        top: 0;
-        left: 0;
+        height: 120px;
+        top: -5px;
+        left: -5px;
         position: absolute;
+        border: 5px solid rgb(192, 13, 73);
+        border-radius: 12px;
         transform: rotateY(180deg);
-        background-color: white;
+        background-image: url('./下载.svg');
+        background-size: 35%;
     }
-    .box div:hover{
-        /* border: 1px solid black; */
-        /* transform: rotateY(180deg); */
-
-    }
-
     .box div i {
         font-size: 2em;
-        color:red;
-        /* z-index: 999; */
+        color:white;
+
     }
 
     div.open {
-        /* color: white; */
-        /* background-color: antiquewhite; */
-        transform: rotateY(180deg);
+        transform: rotateY(0deg);
     }
-
    .box div.act {
-       
-        background-color: aqua;
+        transform: rotateY(0deg);
+        color: aqua;
+        background-image: linear-gradient(orangered,orangered);
         color: white;
     }
-
-    div.equal {
-        background-color: antiquewhite;
+    .mark{
+        width: 600px;
+        height: 600px;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        position: absolute;
+        left: 35%;
+        top: 5%;
+        border-radius: 32px;
+       visibility: hidden;
+    
+    }
+    .mark div{
+        width: 200px;
+        height: 50px;
+        border-radius: 32px;
+        background-color: aqua;
+        text-align: center;
+        line-height: 50px;
+        font-size: 2em;
     }
 </style>
 
 <body>
     <div class="box"></div>
+    <div class="mark">
+        <h1>恭喜通关！！！</h1>
+        <div>再玩一局</div>
+    </div>
 </body>
 <script>
     var box = document.querySelector(".box")
+    var btn=document.querySelector(".mark div")
+    btn.onclick=function(){
+        window.history.go(0)
+    }
     console.log(box);
     var nums = ["futbol-o", "hand-peace-o", "star", "thumbs-up", "trophy", "spinner", "puzzle-piece", "graduation-cap"];
     function add(nums) {
@@ -110,11 +129,11 @@
 
     nums.forEach(function (e, i) {
         var node = document.createElement('div');
-        var div=document.createElement('div');
-        node.append(`<div></div>`);
-        // node.before.innerHTML='<i class="fa fa-' + e + '"></i>';
+        var span=document.createElement('span');
         node.innerHTML = '<i class="fa fa-' + e + '"></i>';
         box.appendChild(node);
+        node.appendChild(span)
+        console.log(span);
         // node.classList.add("open")
         node.onclick = function () {
             this.classList.add("open")
@@ -139,7 +158,7 @@
                 setTimeout(function () {
                     openList[0].classList.remove("open")
                     openList[1].classList.remove("open")
-                }, 500)
+                }, 1000)
 
                 if (openList[0].innerHTML === openList[1].innerHTML) {
                     openList[0].classList.add("act")
@@ -152,9 +171,9 @@
                     }
                     if (act.length === dd.length) {
                         setTimeout(function(){
-                            window.alert("恭喜通关")
-
-                        },200)
+                            // window.alert("恭喜通关")
+                            document.querySelector(".mark").style.visibility="inherit";
+                        },500)
 
                     }
                 }

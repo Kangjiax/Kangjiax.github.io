@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color:papayawhip;
+    }
+
+    @keyframes move {
+        from {
+            background-position: 0 0;
+        }
+
+        to {
+            background-position: -1000px 0;
+        }
+    }
+
+    @keyframes move1 {
+        from {
+            background-position: 0 0;
+        }
+
+        to {
+            background-position: -320px 0;
+        }
+    }
+
+    @keyframes move4 {
+        from {
+            background-position: 0 288px;
+        }
+
+        to {
+            background-position: -320px 288px;
+        }
+    }
+    @keyframes move2 {
+        from {
+            background-position: 0 96px;
+        }
+
+        to {
+            background-position: -320px 96px;
+        }
+    }
+    @keyframes move3 {
+        from {
+            background-position: 0 192px;
+        }
+
+        to {
+            background-position: -320px 192px;
+        }
+    }
+
+    .box {
+        animation: move 1s steps(7) infinite;
+        width: 124px;
+        height: 177px;
+        /* background-color: black; */
+        background-repeat: no-repeat;
+        background-image: url('./space-to-top.png');
+    }
+
+    .box1 {
+        animation: move1 1s steps(4) infinite;
+        width: 80px;
+        height: 96px;
+        background-image: url('./monster.png');
+        /* background-repeat: no-repeat; */
+    }
+
+    .box2 {
+        animation: move2 1s steps(4) infinite;
+        width: 80px;
+        height: 96px;
+        background-image: url('./monster.png');
+        /* background-repeat: no-repeat; */
+    }
+
+    .box3 {
+        animation: move3 1s steps(4) infinite;
+        width: 80px;
+        height: 96px;
+        background-image: url('./monster.png');
+        /* background-repeat: no-repeat; */
+    }
+
+    .box4 {
+        animation: move4 1s steps(4) infinite;
+        width: 80px;
+        height: 96px;
+        background-image: url('./monster.png');
+        /* background-repeat: no-repeat; */
+    }
+    .big{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 200px auto;
+
+    }
+</style>
+
+<body> 
+    <div class="big">
+    <div class="box"></div>
+   
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div></div>
+</body>
+
+</html>

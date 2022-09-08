@@ -54,6 +54,44 @@
     .p4 {
         animation-delay: -3s;
     }
+    body{
+        
+    }
+    .big{
+        width: 50px;
+        height: 50px;
+        margin: 0 auto;
+        background-color: red;
+        transform: rotateY(0deg);
+        transition: all 3s;
+        position: relative;
+        transform-style: preserve-3d;
+        
+        /* transform-style: preserve-3d; */
+    }
+    .big::before{
+        content: "before";
+        width: 100%;
+        height: 100%;
+        position:absolute;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        background-color: aqua;
+        transform: rotateY(180deg);
+    }
+    .big::after{
+        content: "after";
+        width: 100%;
+        height: 100%;
+        position:absolute;
+        left: 0;
+        right: 0;
+        background-color: red;
+    }
+    .big:hover{
+        transform: rotateY(180deg);
+    }
 </style>
 
 <body>
@@ -63,6 +101,7 @@
         <div class="p3"></div>
         <div class="p4"></div>
     </div>
+    <div class="big">123</div>
 </body>
 
 </html>

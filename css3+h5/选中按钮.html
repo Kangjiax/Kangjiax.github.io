@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input {
+        display: none;
+    }
+    .box {
+        position: relative;
+        width: 200px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: gray;
+        transition: all 1s;
+        overflow: hidden;
+    }
+    input:checked+.box {
+        background-color: orange;
+    }
+    input:checked+.box .off {
+        left: 155px;
+        transform: rotate(180deg);
+    }
+    .box .off {
+        position: absolute;
+        left: 5px;
+        display: block;
+    }
+    .box div {
+        transition: all 1s;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        /* background-image: linear-gradient(t); */
+        background-image: linear-gradient(-45deg, green,red,blue);
+        text-align: center;
+        position: absolute;
+        top: 5px;  
+        /* font-size: 2em; */
+    }
+    
+    .box span{
+        color:white ;
+        transition: all 1s;
+        line-height: 50px;
+        position: absolute;
+        /* left: 90px; */
+        font-size: 20px;
+    }
+    .box span:nth-of-type(1){
+        left: -90px;
+    } 
+    .box span:nth-of-type(2){
+        right: 90px;
+    }
+    input:checked+.box span:nth-of-type(1){
+        left: 90px;
+    }
+    input:checked+.box span:nth-of-type(2){
+        right:-90px;
+    }
+</style>
+
+<body>
+    <label>
+        <input type="checkbox">
+        <div class="box">
+            <span>no</span>
+            <span>off</span>
+            <div class="off"></div>
+        </div>
+    </label>
+    <br>
+</body>
+
+</html>
