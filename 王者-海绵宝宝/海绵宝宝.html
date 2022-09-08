@@ -22,7 +22,7 @@
     .box .move {
         width: 480px;
         height: 270px;
-        background-image: url('./eee63cd.webp');
+        background-image: url('./image/eee63cd.webp');
         background-size: cover;
         overflow: hidden;
         border-radius: 12px;
@@ -198,7 +198,7 @@
             }
             $(".box .move").css({ 
             backgroundSize: 1000 + "%",
-            backgroundImage : 'url(./1.jpg)'
+            backgroundImage : 'url(./image/1.jpg)'
         })
             $(this).mousemove(function () {
                 // console.log(event);
@@ -209,7 +209,7 @@
             })
         }, function () {
             $(this).find(".p").empty()
-            $(".box .move")[0].style.backgroundImage = 'url(./eee63cd.webp)';
+            $(".box .move")[0].style.backgroundImage = 'url(./image/eee63cd.webp)';
             $(".box .move").css({ backgroundSize: "100%", backgroundPosition: 0 })
             $(this).find(".bg").hide().end().find(".jindu").hide()
             clearInterval(time)

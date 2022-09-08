@@ -1,8 +1,63 @@
+.add {
+  animation: moves 3s ease-in-out alternate forwards;
+}
+.remover {
+  animation: moves1 3s ease-in-out alternate backwards;
+}
+@keyframes moves {
+  from {
+    height: 70px;
+  }
+  to {
+    height: 250px;
+  }
+}
+@keyframes moves1 {
+  from {
+    height: 250px;
+  }
+  to {
+    height: 70px;
+  }
+}
 .nav {
   width: 100%;
   position: fixed;
   z-index: 999;
   color: white;
+}
+.nav .visible-xs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.nav .visible-xs .nav-name {
+  pointer-events: none;
+  opacity: 1;
+  left: 10%;
+  top: 80px;
+  text-align: center;
+  background-color: white;
+  position: absolute;
+}
+.nav .visible-xs .nav-name a {
+  color: #000;
+}
+.nav .visible-xs .item-i {
+  font-size: 20px;
+  text-align: right;
+  margin-top: 20px;
+}
+.nav .visible-xs .item-i .i {
+  transition: all 3s;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  background: orangered;
 }
 .nav .row {
   display: flex;
@@ -117,6 +172,7 @@
   background-color: orangered;
   border-radius: 25px;
   border: 0;
+  color: #fff;
 }
 .item .row button:hover {
   background-color: orange;
@@ -136,6 +192,7 @@
   position: absolute;
   top: 0;
   display: flex;
+  color: #fff;
   flex-flow: column;
   justify-content: center;
   padding: 20px;
@@ -221,48 +278,69 @@
   margin: 20px 0;
   position: relative;
 }
-@keyframes move {
-  0% {
-    border: 2px solid rgba(255, 255, 255, 0.61);
-  }
-  50% {
-    border: 5px solid rgba(255, 255, 255, 0.432);
-  }
-  100% {
-    border: 10px solid transparent;
-  }
-}
-.card .img .forword {
-  animation: move 3s linear infinite reverse;
-  position: absolute;
-  top: 40%;
-  left: 40%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-}
-.card .img .forword .back {
-  animation: move 5s linear infinite reverse;
-  border-radius: 50%;
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.card .img .forword .btn {
-  border-radius: 50%;
+.card .img .box {
   width: 50px;
   height: 50px;
-  background-color: white;
-  color: red;
-  line-height: 35px;
+  position: absolute;
+  left: 40%;
+  top: 40%;
 }
-.card .img .forword .btn:hover {
+@keyframes move111 {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+@keyframes move222 {
+  from {
+    transform: scale(3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.card .img .box .p1 {
+  left: 50%;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  color: red;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.card .img .box .p1:hover {
   transform: scale(1.1);
+}
+.card .img .box .p2,
+.card .img .box .p3,
+.card .img .box .p4 {
+  animation: move111 3s ease-in-out infinite;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.card .img .box .p2 {
+  animation-delay: -1s;
+}
+.card .img .box .p3 {
+  animation-delay: -2s;
+}
+.card .img .box .p4 {
+  animation-delay: -3s;
 }
 .card .img .border {
   position: absolute;
@@ -316,6 +394,8 @@
   height: 434px;
   padding: 50px;
   box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.151);
+  box-shadow: 0 0 1px 0 gray;
 }
 .main .row .i-item button {
   width: 200px;
@@ -331,8 +411,25 @@
 .main .row .i-item button:hover {
   background-color: orange;
 }
-.main .row .item-box {
+.main .row .main-bg1 {
   height: 434px;
+  background-size: cover;
+  background-image: url('../整容/img/bg2.jpg');
+}
+.main .row .main-bg2 {
+  height: 434px;
+  background-size: cover;
+  background-image: url('../整容/img/bg3.jpg');
+}
+.main .row .main-bg3 {
+  height: 434px;
+  background-size: cover;
+  background-image: url('../整容/img/bg4.jpg');
+}
+.main .row .item-box {
+  background-color: rgba(255, 255, 255, 0.021);
+  height: 434px;
+  box-shadow: 0 0 1px 0 gray;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -343,7 +440,8 @@
   color: red;
 }
 .goodList {
-  margin: 50px 0;
+  padding: 50px 0;
+  background-color: rgba(255, 255, 255, 0.151);
 }
 .goodList .row h1 {
   text-align: center;
