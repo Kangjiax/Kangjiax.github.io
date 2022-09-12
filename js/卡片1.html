@@ -10,11 +10,12 @@
 
 </head>
 <style>
-    body{
+    body {
         height: 100vh;
-        background-image: linear-gradient(blue,rgb(189, 12, 41),pink);
-        
+        background-image: linear-gradient(blue, rgb(189, 12, 41), pink);
+
     }
+
     .box {
         width: 480px;
         display: flex;
@@ -27,6 +28,8 @@
     }
 
     .box div {
+        -ms-transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
         transform-style: preserve-3d;
         transform: rotateY(0);
         transition: all .5s;
@@ -41,9 +44,10 @@
         align-items: center;
         position: relative;
         transform: rotateY(180deg);
-        
+
     }
-    .box div span{
+
+    .box div span {
         display: block;
         width: 100px;
         height: 120px;
@@ -56,22 +60,25 @@
         background-image: url('./下载.svg');
         background-size: 35%;
     }
+
     .box div i {
         font-size: 2em;
-        color:white;
+        color: white;
 
     }
 
     div.open {
         transform: rotateY(0deg);
     }
-   .box div.act {
+
+    .box div.act {
         transform: rotateY(0deg);
         color: aqua;
-        background-image: linear-gradient(orangered,orangered);
+        background-image: linear-gradient(orangered, orangered);
         color: white;
     }
-    .mark{
+
+    .mark {
         width: 600px;
         height: 600px;
         display: flex;
@@ -83,10 +90,11 @@
         left: 35%;
         top: 5%;
         border-radius: 32px;
-       visibility: hidden;
-    
+        visibility: hidden;
+
     }
-    .mark div{
+
+    .mark div {
         width: 200px;
         height: 50px;
         border-radius: 32px;
@@ -106,8 +114,8 @@
 </body>
 <script>
     var box = document.querySelector(".box")
-    var btn=document.querySelector(".mark div")
-    btn.onclick=function(){
+    var btn = document.querySelector(".mark div")
+    btn.onclick = function () {
         window.history.go(0)
     }
     console.log(box);
@@ -129,7 +137,7 @@
 
     nums.forEach(function (e, i) {
         var node = document.createElement('div');
-        var span=document.createElement('span');
+        var span = document.createElement('span');
         node.innerHTML = '<i class="fa fa-' + e + '"></i>';
         box.appendChild(node);
         node.appendChild(span)
@@ -170,10 +178,10 @@
                         }
                     }
                     if (act.length === dd.length) {
-                        setTimeout(function(){
+                        setTimeout(function () {
                             // window.alert("恭喜通关")
-                            document.querySelector(".mark").style.visibility="inherit";
-                        },500)
+                            document.querySelector(".mark").style.visibility = "inherit";
+                        }, 500)
 
                     }
                 }

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <title>Document</title>
+    <style>
+        body {
+            background: #DFE7EF;
+        }
+
+        .box {
+            padding: 33px;
+            margin: auto;
+            width: 500px;
+            height: 700px;
+            box-shadow: 0 0 13px;
+            border-radius: 13px;
+            padding-top: 0.1px;
+            color: #ACB8CC;
+        }
+
+        .box .left {
+            /* overflow: hidden; */
+            border-radius: 13px;
+            width: 60%;
+            height: 300px;
+            box-shadow: 0 0 23px #C3A27F;
+            position: relative;
+            left: -66px;
+            /* transform: scale(1.2); */
+            transition: all 1s;
+        }
+
+        @keyframes kk {
+            from {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                transform: scale(1.5);
+            }
+        }
+
+        .box .left img {
+            width: 100%;
+            position: absolute;
+            height: 100%;
+            border-radius: 13px;
+            transition: all 3s;
+            transform: scale(1);
+        }
+
+        .box .top {
+            margin-top: 30px;
+            display: flex;
+        }
+
+        .box .right {
+            position: relative;
+            /* left: -33px; */
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            color: #ACB8CC;
+            align-items: center;
+        }
+        i:nth-of-type(5){
+            font-size: 32px;
+        }
+        i:hover{
+            transform: scale(1.1);
+        }
+        .box .right i {
+            display: block;
+            margin: 13px;
+        }
+
+        h3 {
+            color: #6D7C9A;
+            font-size: 33px;
+        }
+
+        h5 {
+            margin: 0;
+            font-size: 50px;
+        }
+
+        .bottom .line .lines {
+            background: aqua !important;
+            width: 0%;
+            height: 100%;
+            border-radius: 50px;
+            /* position: absolute; */
+            /* top: 0; */
+        }
+
+        .bottom .line input {
+            position: absolute;
+            top: -2px;
+            opacity: 0;
+            height: 100%;
+            display: block;
+            width: 100%;
+        }
+
+        .bottom .line {
+            margin-top: 77px;
+            background: pink;
+            width: 100%;
+            height: 12px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: border;
+            position: relative;
+        }
+
+        .bottom .end {
+            margin-top: -33px;
+            float: right;
+        }
+
+        .bottom .start {
+            margin-top: 23px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="top">
+            <div class="left">
+                <!-- 图片不要变形 -->
+                <img src="./audio/1.jpg" alt="">
+                <img src="./audio/2.jpg" alt="">
+                <img src="./audio/3.jpg" alt="">
+
+            </div>
+            <div class="right">
+                <i class="fa fa-heart  fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-2x fa-external-link" aria-hidden="true"></i>
+                <i class="fa fa-2x fa-fast-backward" aria-hidden="true"></i>
+                <i class="fa fa-2x fa-fast-forward" aria-hidden="true"></i>
+                <i class="fa fa-6x fa-play-circle" aria-hidden="true"></i>
+                <!-- <i class="fa  fa-6x fa-play-circle" aria-hidden="true"></i> -->
+            </div>
+        </div>
+        <h3>盛哲</h3>
+        <h5>在你的身边</h5>
+        <div class="bottom">
+            <!-- controls -->
+            <div class="end"> 03:36</div>
+            <div class="line">
+                <input type="range" name="" value="0">
+                <div class="lines"></div>
+            </div>
+            <div class="start">00:00</div>
+        </div>
+        <video src="./audio/1.mp3"></video>
+    </div>
+    <script>
+        var i = document.querySelectorAll(".right i");
+        var left = document.querySelector(".left");
+        var h3 = document.querySelector("h3");
+        var h5 = document.querySelector("h5");
+        var video = document.querySelector("video");
+        var imgs = document.querySelectorAll("img");
+        var lines = document.querySelector(".lines");
+        var end = document.querySelector(".end");
+        var start = document.querySelector(".start");
+
+        var num = 1;
+        var love = true;
+        var hh3 = ["盛哲", "Mody", "刘惜君"]
+        var hh5 = ["在你的身边", "晴天", "我很快乐"]
+        i[0].onclick = function () {
+            if (love) {
+                i[0].style.color = "red";
+                love = false
+            } else {
+                i[0].style.color = "#ACB8CC";
+                love = true
+            }
+        }
+        imgs.forEach(function (e, i) {
+            imgs[i].style.opacity = 0
+        })
+        imgs[0].style.opacity = 1
+        i[2].onclick = function () {//上
+            imgs.forEach(function (e, i) {
+                imgs[i].style.opacity = 0
+                imgs[i].style.transform = 'scale(1.2)'
+
+            })
+            console.log(num);
+            i[4].className = ("fa  fa-6x fa-play-circle");
+            lines.style.width = 0 + "%"
+            h3.innerHTML = hh3[num]
+            h5.innerHTML = hh5[num]
+            num--
+            num < 0 ? num = 2 : num
+            imgs[num].style.opacity = 1
+            imgs[num].style.transform = 'scale(0.5)'
+            video.src = "./audio/" + num+1  + ".mp3"
+        }
+        i[3].onclick = function () {//下
+            imgs.forEach(function (e, i) {
+                imgs[i].style.opacity = 0
+                imgs[i].style.transform = ' scale(1.2)'
+                
+            })
+            i[4].className = ("fa  fa-6x fa-play-circle");
+            lines.style.width = 0 + "%"
+            h3.innerHTML = hh3[num]
+            h5.innerHTML = hh5[num]
+            num++
+            num > 2 ? num = 0 : num
+            imgs[num].style.opacity = 1
+            imgs[num].style.transform = ' scale(1)'
+            console.log("./audio/" + num + ".mp3");
+            video.src = "./audio/" + num + ".mp3";
+        }
+        var pd = false
+        i[4].onclick = function () {//stop?
+            if (pd) {
+                i[4].className = ("fa  fa-6x fa-play-circle");
+                video.pause();
+                pd = false;
+            } else {
+                i[4].className = ("fa  fa-6x fa-pause-circle");
+                video.play();
+                pd = true;
+            }
+
+        }
+        // video.ontimeupdate = function () {
+        //     end.innerHTML = Number(video.duration / 60).toFixed(2);
+        //     start.innerHTML = Number(video.currentTime / 60).toFixed(2);
+        //     // lines.style.width=(video.currentTime/60)*(100/(video.duration/60))+"%"
+        //     lines.style.width = (video.currentTime / video.duration) * 100 + "%"
+        // };
+        video.onended = function () {
+            i[4].className = ("fa  fa-6x fa-play-circle");
+            lines.style.width = 0 + "%"
+            start.innerHTML = "00:00";
+        }
+        var input = document.querySelector("input")
+        var video = document.querySelector("video")
+        input.oninput = function () {
+            lines.style.width = this.value + "%";
+            video.currentTime = (input.value * video.duration) / 100
+        }
+        video.ontimeupdate = function () {
+            end.innerHTML = Number(video.duration / 60).toFixed(2);
+            start.innerHTML = Number(video.currentTime / 60).toFixed(2);
+            lines.style.width = (this.currentTime / this.duration) * 100 + "%";
+            // input.value = (video.currentTime / video.duration) * 100
+        }
+    </script>
+    <style>
+        b {
+            animation-name: kk;
+        }
+    </style>
+</body>
+
+</html>

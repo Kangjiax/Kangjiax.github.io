@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: bisque;
+    }
+    .bigbox{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+    }
+    .huoche{
+        
+        margin: 50px;
+        background-image: url('./image/pc1.png');
+        position: relative;
+    }
+    @keyframes move {
+        from{
+            transform: scale(1);
+        }
+        to{
+            transform: scale(1.1);
+        }
+    }
+        
+    
+   .bigbox div{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        transition: all 1s;
+        background-repeat: no-repeat;
+    }
+    .huoche div:nth-of-type(1){
+        background-image: url('./image/pc2.png');
+        position: relative;
+        background-position: -450px 0;
+        z-index: 999;
+    }
+    .huoche div:nth-of-type(2){
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-image: url('./image/pc3.png');
+    }
+    .huoche:hover{
+        animation: move 0.5s forwards;
+        transition: all 7s;
+        background-position: -200px 0;
+    }
+    .huoche:hover .che{
+        transition: all 7s;
+        background-position: -142px 0;
+    }
+    .huoche:hover .lu{
+        transition: all 7s;
+        background-position: -300px 0;
+    }
+    .da{
+        background-image: url('./image/pc4.png');
+    }
+    .da div:nth-of-type(1){     
+        background-image: url('./image/pc6.png');
+    }
+    .da div:nth-of-type(2){
+        background-image: url('./image/pc5.png');
+    }
+    .fj{
+        background-image: url('./image/pc7.png');
+    }
+    .fj div:nth-of-type(1){
+        background-image: url('./image/pc9.png');
+    }
+    .fj div:nth-of-type(2){
+        background-image: url('./image/pc8.png');
+    }
+</style>
+<body>
+    <div class="bigbox">
+
+        <div class="huoche ">
+            <div class="che"></div>
+            <div class="lu"></div>
+    </div>
+    <div class="huoche da">
+        <div class="che"></div>
+        <div class="lu"></div>
+    </div>
+    <div class="huoche fj">
+        <div class="che"></div>
+        <div class="lu"></div>
+    </div>
+</div>
+</body>
+</html>

@@ -3,7 +3,7 @@ body{
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
+    // height: 100%;
     // background-color: aqua;
 }
 @xs: ~"(min-width: 768px)";
@@ -20,7 +20,6 @@ body{
 }
 .box{
     display: flex;
-    height: 100vh;
     @media @xs {
         width: 750px;
     }
@@ -37,19 +36,26 @@ body{
     .item{
         width: 20%;
         background-color: rgba(255, 238, 0, 0.452);
-        height: 100%;
-        display: flex;
-        // align-items: center;
-        justify-content: center;
-        
+
+       
+        // justify-content: center;
+        .left{
+            display: flex;
+            flex-flow: column;
+            // justify-content: center;
+            align-items: center;
+            position: fixed;
+            left: 100px;
+            top: 0;
+        }
         .imgs{
             animation: move1 10s linear infinite reverse;
             pointer-events: none;
             margin: 50px auto;
             width: 90px;
             height: 90px;
-            background-image: url('./1210ae5d9ac352a15ce4620f85ee3f4.jpg');
-            background-position: center;
+            background-image: url('./touxiang.jpg');
+            background-position: center ;
             background-size: cover;
             border-radius: 50%;
         }
@@ -57,8 +63,81 @@ body{
     .content{
         padding:0 50px;
         width: 80%;
-        height: 100%;
+    
         background-color: aqua;
+        #bookstop{
+            .zhengrong{
+                background-image: url('./案例image/整容.png');
+            }
+            .fuzhuang{
+                background-image: url('./案例image/服装.png');
+            }
+        }
+        #css3{
+            .dh{
+                background-image: url('./案例image/动画.png');
+            }
+            .load{
+                background-image: url('./案例image/loading.png');
+            }
+            .liu{
+                background-image: url('./案例image/360.png');
+            }
+            .shicha{
+                background-image: url('./案例image/视差.png');
+            }
+            .yinyue{
+                background-image: url('./案例image/音乐.png');
+            }
+        }
+        #js{
+            .gq{
+                background-image: url('./案例image/钢琴大师.png');
+            }
+            .kp{
+                background-image: url('./案例image/卡片记忆.png');
+            }
+            .sk{
+                background-image: url('./案例image/找色块.png');
+            }
+            .sj{
+                background-image: url('./案例image/倒计时.png');
+            }
+            .cj{
+                background-image: url('./案例image/抽奖.png');
+            }
+        }
+        #jq{
+            .sfq{
+                background-image: url('./案例image/手风琴.png');
+            }
+            .lbt{
+                background-image: url('./案例image/轮播图.png');
+            }
+            .fdj{
+                background-image: url('./案例image/放大镜.png');
+            }
+            .wz{
+                background-image: url('./案例image/王者.png');
+            }
+            .haim{
+                background-image: url('./案例image/海绵宝宝.png');
+            }
+        }
+        >div{
+            >div{
+                a{
+
+                    text-decoration: none;
+                    text-align: center;
+                    margin: 20px;
+                }
+                display: flex;
+                flex-wrap: wrap;
+                // align-items: center;
+                // justify-content: center;
+            }
+        }
         img{
             width: 300px;
             height: 300px;

@@ -2,7 +2,6 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
 }
 @keyframes kjx {
   from {
@@ -14,7 +13,6 @@ body {
 }
 .box {
   display: flex;
-  height: 100vh;
 }
 @media (min-width: 768px) {
   .box {
@@ -39,9 +37,14 @@ body {
 .box .item {
   width: 20%;
   background-color: rgba(255, 238, 0, 0.452);
-  height: 100%;
+}
+.box .item .left {
   display: flex;
-  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  position: fixed;
+  left: 100px;
+  top: 0;
 }
 .box .item .imgs {
   animation: move1 10s linear infinite reverse;
@@ -49,16 +52,75 @@ body {
   margin: 50px auto;
   width: 90px;
   height: 90px;
-  background-image: url('1210ae5d9ac352a15ce4620f85ee3f4.jpg');
-  background-position: center;
+  background-image: url('touxiang.jpg');
+  background-position: center ;
   background-size: cover;
   border-radius: 50%;
 }
 .box .content {
   padding: 0 50px;
   width: 80%;
-  height: 100%;
   background-color: aqua;
+}
+.box .content #bookstop .zhengrong {
+  background-image: url('案例image/整容.png');
+}
+.box .content #bookstop .fuzhuang {
+  background-image: url('案例image/服装.png');
+}
+.box .content #css3 .dh {
+  background-image: url('案例image/动画.png');
+}
+.box .content #css3 .load {
+  background-image: url('案例image/loading.png');
+}
+.box .content #css3 .liu {
+  background-image: url('案例image/360.png');
+}
+.box .content #css3 .shicha {
+  background-image: url('案例image/视差.png');
+}
+.box .content #css3 .yinyue {
+  background-image: url('案例image/音乐.png');
+}
+.box .content #js .gq {
+  background-image: url('案例image/钢琴大师.png');
+}
+.box .content #js .kp {
+  background-image: url('案例image/卡片记忆.png');
+}
+.box .content #js .sk {
+  background-image: url('案例image/找色块.png');
+}
+.box .content #js .sj {
+  background-image: url('案例image/倒计时.png');
+}
+.box .content #js .cj {
+  background-image: url('案例image/抽奖.png');
+}
+.box .content #jq .sfq {
+  background-image: url('案例image/手风琴.png');
+}
+.box .content #jq .lbt {
+  background-image: url('案例image/轮播图.png');
+}
+.box .content #jq .fdj {
+  background-image: url('案例image/放大镜.png');
+}
+.box .content #jq .wz {
+  background-image: url('案例image/王者.png');
+}
+.box .content #jq .haim {
+  background-image: url('案例image/海绵宝宝.png');
+}
+.box .content > div > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+.box .content > div > div a {
+  text-decoration: none;
+  text-align: center;
+  margin: 20px;
 }
 .box .content img {
   width: 300px;

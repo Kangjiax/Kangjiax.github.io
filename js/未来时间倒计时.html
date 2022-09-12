@@ -14,37 +14,40 @@
         height: 1000px;
         background-repeat:no-repeat;  
         background-size: cover;
-        background-image: url(./1.jpg);
+        background-image: url(./时间.jpeg);
         display: flex;
         align-items: center;
+        position: relative;
+
+    }
+    .mark{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 166, 0, 0.685);
     }
     .bg .big{
-        /* position: absolute; */
-        /* bottom: 300px; */
-        font-size: 2em;
-        width: 1000px;
-        /* left: 45%; */
-        margin: 0 auto;
+        color: white;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
     }
     .title {
+        display: flex;
+        justify-content: space-evenly;
         margin: 0 auto;
         width: 500px;
-        overflow: hidden;
-    }
-    .title div{
-        float: left;
-        width: 100px;
-        height: 100px;
-        background-color: rgba(128, 128, 128, 0.501);
-        color: white;
-        text-align: center;
-        line-height: 100px;
-        margin: 10px
     }
     .box{
-        margin: 0 auto;
         width: 500px;
-        overflow: hidden;
+        display: flex;
+        justify-content: space-evenly;
     }
     .box div{
         width: 100px;
@@ -53,29 +56,35 @@
         color: white;
         text-align: center;
         line-height: 100px;
-        margin: 15px 10px;
-        float: left;
+        font-size: 2em;
+        /* margin: 15px 10px; */
     }
     .box div:hover{
-        /* margin-bottom: 10px; */
-        margin: 10px;
-        /* color: red; */
+        margin-top: -10px;
     }
-    .big p{
+    .big h1{
         text-align: center;
-        color: orange;
-        font-size: 2em;
+        font-size: 3em;
+        margin-top: 100px;
+    }
+    .title p{
+        width: 100px;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        color: white;
     }
 </style>
 <body>
     <div class="bg">
         <div class="big">
-            <p>距离2023年9月1日还有:</p>
+            <img src="https://rafaelalucas.com/dailyui/14/assets/logo.svg" alt="">
+            <h1>距离2023年9月1日还有:</h1>
             <div class="title">
-                <div>Day</div>
-                <div>Time</div>
-                <div>Min</div>
-                <div>Miao</div>
+                <p>Day</p>
+                <p>Hours</p>
+                <p>minutes</p>
+                <p>seconds</p>
             </div>
             <div class="box">
                 <div></div>
@@ -84,7 +93,9 @@
                 <div></div>
                 <!-- <div></div> -->
             </div>
+            <p class="foot">new website coming soon</p>
         </div>
+        <div class="mark"></div>
     </div>
     <script>
         var PI = 3.144548268454685;
