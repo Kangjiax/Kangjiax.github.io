@@ -83,6 +83,15 @@ body {
 .box .content #css3 .yinyue {
   background-image: url('案例image/音乐.png');
 }
+.box .content #css3 .zhu {
+  background-image: url('案例image/echars.png');
+}
+.box .content #css3 .xuan {
+  background-image: url('案例image/按钮.png');
+}
+.box .content #css3 .svg {
+  background-image: url('案例image/svg.png');
+}
 .box .content #js .gq {
   background-image: url('案例image/钢琴大师.png');
 }
