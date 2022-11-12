@@ -57,10 +57,18 @@ body {
   background-size: cover;
   border-radius: 50%;
 }
+.box .item a {
+  text-decoration: none;
+  color: black;
+}
 .box .content {
   padding: 0 50px;
   width: 80%;
-  background-color: aqua;
+}
+.box .content a {
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
 }
 .box .content #bookstop .zhengrong {
   background-image: url('案例image/整容.png');
@@ -122,6 +130,9 @@ body {
 .box .content #jq .haim {
   background-image: url('案例image/海绵宝宝.png');
 }
+.box .content #vue .wangyiyun {
+  background-image: url('案例image/wangyiyun.png');
+}
 .box .content > div > div {
   display: flex;
   flex-wrap: wrap;
@@ -135,4 +146,3 @@ body {
   width: 300px;
   height: 300px;
 }
-/*# sourceMappingURL=./index.css.map */
