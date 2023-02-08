@@ -133,6 +133,9 @@ body {
 .box .content #vue .wangyiyun {
   background-image: url('案例image/wangyiyun.png');
 }
+.box .content #vue .mtl {
+  background-image: url('案例image/摩天轮票房.png');
+}
 .box .content > div > div {
   display: flex;
   flex-wrap: wrap;
